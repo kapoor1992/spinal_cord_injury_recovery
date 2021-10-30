@@ -24,10 +24,9 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - MaterialDesignSymbol
-  trunk:
     - AFNetworking
     - Alamofire
+    - MaterialDesignSymbol
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
