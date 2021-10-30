@@ -1,0 +1,776 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2E1D02DD1476EC7EBE2A2A9D /* Pods_SCI_Recovery_SCI_RecoveryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB9CB218C4C2E0C1AE4C450 /* Pods_SCI_Recovery_SCI_RecoveryUITests.framework */; };
+		503DA6379F4215F1643958F3 /* Pods_SCI_RecoveryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF996C93B77AC0C4033D3C8F /* Pods_SCI_RecoveryTests.framework */; };
+		59CE0156E5E8A70B4E67E2A3 /* Pods_SCI_Recovery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4AE1990436D975190DEED0 /* Pods_SCI_Recovery.framework */; };
+		FD35BFE22727C13200A417DC /* SCI_RecoveryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD35BFE12727C13200A417DC /* SCI_RecoveryApp.swift */; };
+		FD35BFE42727C13200A417DC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD35BFE32727C13200A417DC /* ContentView.swift */; };
+		FD35BFE62727C13400A417DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD35BFE52727C13400A417DC /* Assets.xcassets */; };
+		FD35BFE92727C13400A417DC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD35BFE82727C13400A417DC /* Preview Assets.xcassets */; };
+		FD35BFF32727C13400A417DC /* SCI_RecoveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD35BFF22727C13400A417DC /* SCI_RecoveryTests.swift */; };
+		FD35BFFD2727C13400A417DC /* SCI_RecoveryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD35BFFC2727C13400A417DC /* SCI_RecoveryUITests.swift */; };
+		FD35BFFF2727C13400A417DC /* SCI_RecoveryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD35BFFE2727C13400A417DC /* SCI_RecoveryUITestsLaunchTests.swift */; };
+		FD35C00C2727C50B00A417DC /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD35C00B2727C50B00A417DC /* RequestModel.swift */; };
+		FD35C00E2727C52600A417DC /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD35C00D2727C52600A417DC /* ResponseModel.swift */; };
+		FD35C0102727C5F700A417DC /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD35C00F2727C5F700A417DC /* APIController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FD35BFEF2727C13400A417DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD35BFD62727C13200A417DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD35BFDD2727C13200A417DC;
+			remoteInfo = "SCI Recovery";
+		};
+		FD35BFF92727C13400A417DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD35BFD62727C13200A417DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD35BFDD2727C13200A417DC;
+			remoteInfo = "SCI Recovery";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05B92D35ED077DC9AB29553F /* Pods-SCI Recovery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCI Recovery.debug.xcconfig"; path = "Target Support Files/Pods-SCI Recovery/Pods-SCI Recovery.debug.xcconfig"; sourceTree = "<group>"; };
+		14C084C53FE90F7C8E187092 /* Pods-SCI RecoveryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCI RecoveryTests.debug.xcconfig"; path = "Target Support Files/Pods-SCI RecoveryTests/Pods-SCI RecoveryTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6CFA76B5C624DE42C5C12DF6 /* Pods-SCI Recovery-SCI RecoveryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCI Recovery-SCI RecoveryUITests.debug.xcconfig"; path = "Target Support Files/Pods-SCI Recovery-SCI RecoveryUITests/Pods-SCI Recovery-SCI RecoveryUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		708E471065BAA3BEB4123689 /* Pods-SCI RecoveryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCI RecoveryTests.release.xcconfig"; path = "Target Support Files/Pods-SCI RecoveryTests/Pods-SCI RecoveryTests.release.xcconfig"; sourceTree = "<group>"; };
+		9BB9CB218C4C2E0C1AE4C450 /* Pods_SCI_Recovery_SCI_RecoveryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SCI_Recovery_SCI_RecoveryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE4AE1990436D975190DEED0 /* Pods_SCI_Recovery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SCI_Recovery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE2E9CF0EB53E07CEE34A797 /* Pods-SCI Recovery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCI Recovery.release.xcconfig"; path = "Target Support Files/Pods-SCI Recovery/Pods-SCI Recovery.release.xcconfig"; sourceTree = "<group>"; };
+		D7A63943BB04C7A798B02E13 /* Pods-SCI Recovery-SCI RecoveryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCI Recovery-SCI RecoveryUITests.release.xcconfig"; path = "Target Support Files/Pods-SCI Recovery-SCI RecoveryUITests/Pods-SCI Recovery-SCI RecoveryUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FD35BFDE2727C13200A417DC /* SCI Recovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SCI Recovery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD35BFE12727C13200A417DC /* SCI_RecoveryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCI_RecoveryApp.swift; sourceTree = "<group>"; };
+		FD35BFE32727C13200A417DC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FD35BFE52727C13400A417DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FD35BFE82727C13400A417DC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FD35BFEE2727C13400A417DC /* SCI RecoveryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SCI RecoveryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD35BFF22727C13400A417DC /* SCI_RecoveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCI_RecoveryTests.swift; sourceTree = "<group>"; };
+		FD35BFF82727C13400A417DC /* SCI RecoveryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SCI RecoveryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD35BFFC2727C13400A417DC /* SCI_RecoveryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCI_RecoveryUITests.swift; sourceTree = "<group>"; };
+		FD35BFFE2727C13400A417DC /* SCI_RecoveryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCI_RecoveryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FD35C00B2727C50B00A417DC /* RequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
+		FD35C00D2727C52600A417DC /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		FD35C00F2727C5F700A417DC /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		FF996C93B77AC0C4033D3C8F /* Pods_SCI_RecoveryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SCI_RecoveryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FD35BFDB2727C13200A417DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59CE0156E5E8A70B4E67E2A3 /* Pods_SCI_Recovery.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD35BFEB2727C13400A417DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				503DA6379F4215F1643958F3 /* Pods_SCI_RecoveryTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD35BFF52727C13400A417DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E1D02DD1476EC7EBE2A2A9D /* Pods_SCI_Recovery_SCI_RecoveryUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6D736314FA5423FEECE87DE6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				05B92D35ED077DC9AB29553F /* Pods-SCI Recovery.debug.xcconfig */,
+				BE2E9CF0EB53E07CEE34A797 /* Pods-SCI Recovery.release.xcconfig */,
+				6CFA76B5C624DE42C5C12DF6 /* Pods-SCI Recovery-SCI RecoveryUITests.debug.xcconfig */,
+				D7A63943BB04C7A798B02E13 /* Pods-SCI Recovery-SCI RecoveryUITests.release.xcconfig */,
+				14C084C53FE90F7C8E187092 /* Pods-SCI RecoveryTests.debug.xcconfig */,
+				708E471065BAA3BEB4123689 /* Pods-SCI RecoveryTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		777CC5728DE8FF85392E9432 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE4AE1990436D975190DEED0 /* Pods_SCI_Recovery.framework */,
+				9BB9CB218C4C2E0C1AE4C450 /* Pods_SCI_Recovery_SCI_RecoveryUITests.framework */,
+				FF996C93B77AC0C4033D3C8F /* Pods_SCI_RecoveryTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD35BFD52727C13200A417DC = {
+			isa = PBXGroup;
+			children = (
+				FD35BFE02727C13200A417DC /* SCI Recovery */,
+				FD35BFF12727C13400A417DC /* SCI RecoveryTests */,
+				FD35BFFB2727C13400A417DC /* SCI RecoveryUITests */,
+				FD35BFDF2727C13200A417DC /* Products */,
+				6D736314FA5423FEECE87DE6 /* Pods */,
+				777CC5728DE8FF85392E9432 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FD35BFDF2727C13200A417DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD35BFDE2727C13200A417DC /* SCI Recovery.app */,
+				FD35BFEE2727C13400A417DC /* SCI RecoveryTests.xctest */,
+				FD35BFF82727C13400A417DC /* SCI RecoveryUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FD35BFE02727C13200A417DC /* SCI Recovery */ = {
+			isa = PBXGroup;
+			children = (
+				FD35BFE12727C13200A417DC /* SCI_RecoveryApp.swift */,
+				FD35BFE32727C13200A417DC /* ContentView.swift */,
+				FD35BFE52727C13400A417DC /* Assets.xcassets */,
+				FD35BFE72727C13400A417DC /* Preview Content */,
+				FD35C00B2727C50B00A417DC /* RequestModel.swift */,
+				FD35C00D2727C52600A417DC /* ResponseModel.swift */,
+				FD35C00F2727C5F700A417DC /* APIController.swift */,
+			);
+			path = "SCI Recovery";
+			sourceTree = "<group>";
+		};
+		FD35BFE72727C13400A417DC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FD35BFE82727C13400A417DC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FD35BFF12727C13400A417DC /* SCI RecoveryTests */ = {
+			isa = PBXGroup;
+			children = (
+				FD35BFF22727C13400A417DC /* SCI_RecoveryTests.swift */,
+			);
+			path = "SCI RecoveryTests";
+			sourceTree = "<group>";
+		};
+		FD35BFFB2727C13400A417DC /* SCI RecoveryUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FD35BFFC2727C13400A417DC /* SCI_RecoveryUITests.swift */,
+				FD35BFFE2727C13400A417DC /* SCI_RecoveryUITestsLaunchTests.swift */,
+			);
+			path = "SCI RecoveryUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FD35BFDD2727C13200A417DC /* SCI Recovery */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD35C0022727C13400A417DC /* Build configuration list for PBXNativeTarget "SCI Recovery" */;
+			buildPhases = (
+				7CCBE2968635D72884BA7B26 /* [CP] Check Pods Manifest.lock */,
+				FD35BFDA2727C13200A417DC /* Sources */,
+				FD35BFDB2727C13200A417DC /* Frameworks */,
+				FD35BFDC2727C13200A417DC /* Resources */,
+				13681A8EBC4372CCD7BA9BAB /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SCI Recovery";
+			productName = "SCI Recovery";
+			productReference = FD35BFDE2727C13200A417DC /* SCI Recovery.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FD35BFED2727C13400A417DC /* SCI RecoveryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD35C0052727C13400A417DC /* Build configuration list for PBXNativeTarget "SCI RecoveryTests" */;
+			buildPhases = (
+				37CA23CCF479A6848A076BE1 /* [CP] Check Pods Manifest.lock */,
+				FD35BFEA2727C13400A417DC /* Sources */,
+				FD35BFEB2727C13400A417DC /* Frameworks */,
+				FD35BFEC2727C13400A417DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD35BFF02727C13400A417DC /* PBXTargetDependency */,
+			);
+			name = "SCI RecoveryTests";
+			productName = "SCI RecoveryTests";
+			productReference = FD35BFEE2727C13400A417DC /* SCI RecoveryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FD35BFF72727C13400A417DC /* SCI RecoveryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD35C0082727C13400A417DC /* Build configuration list for PBXNativeTarget "SCI RecoveryUITests" */;
+			buildPhases = (
+				F73090FBE1A8FE528AE7352A /* [CP] Check Pods Manifest.lock */,
+				FD35BFF42727C13400A417DC /* Sources */,
+				FD35BFF52727C13400A417DC /* Frameworks */,
+				FD35BFF62727C13400A417DC /* Resources */,
+				AAA0CA3EAEA36D4E17F51C50 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD35BFFA2727C13400A417DC /* PBXTargetDependency */,
+			);
+			name = "SCI RecoveryUITests";
+			productName = "SCI RecoveryUITests";
+			productReference = FD35BFF82727C13400A417DC /* SCI RecoveryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD35BFD62727C13200A417DC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					FD35BFDD2727C13200A417DC = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					FD35BFED2727C13400A417DC = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = FD35BFDD2727C13200A417DC;
+					};
+					FD35BFF72727C13400A417DC = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = FD35BFDD2727C13200A417DC;
+					};
+				};
+			};
+			buildConfigurationList = FD35BFD92727C13200A417DC /* Build configuration list for PBXProject "SCI Recovery" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FD35BFD52727C13200A417DC;
+			productRefGroup = FD35BFDF2727C13200A417DC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD35BFDD2727C13200A417DC /* SCI Recovery */,
+				FD35BFED2727C13400A417DC /* SCI RecoveryTests */,
+				FD35BFF72727C13400A417DC /* SCI RecoveryUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FD35BFDC2727C13200A417DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD35BFE92727C13400A417DC /* Preview Assets.xcassets in Resources */,
+				FD35BFE62727C13400A417DC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD35BFEC2727C13400A417DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD35BFF62727C13400A417DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		13681A8EBC4372CCD7BA9BAB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SCI Recovery/Pods-SCI Recovery-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SCI Recovery/Pods-SCI Recovery-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SCI Recovery/Pods-SCI Recovery-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37CA23CCF479A6848A076BE1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SCI RecoveryTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CCBE2968635D72884BA7B26 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SCI Recovery-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAA0CA3EAEA36D4E17F51C50 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SCI Recovery-SCI RecoveryUITests/Pods-SCI Recovery-SCI RecoveryUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SCI Recovery-SCI RecoveryUITests/Pods-SCI Recovery-SCI RecoveryUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SCI Recovery-SCI RecoveryUITests/Pods-SCI Recovery-SCI RecoveryUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F73090FBE1A8FE528AE7352A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SCI Recovery-SCI RecoveryUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FD35BFDA2727C13200A417DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD35BFE42727C13200A417DC /* ContentView.swift in Sources */,
+				FD35BFE22727C13200A417DC /* SCI_RecoveryApp.swift in Sources */,
+				FD35C00E2727C52600A417DC /* ResponseModel.swift in Sources */,
+				FD35C00C2727C50B00A417DC /* RequestModel.swift in Sources */,
+				FD35C0102727C5F700A417DC /* APIController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD35BFEA2727C13400A417DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD35BFF32727C13400A417DC /* SCI_RecoveryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD35BFF42727C13400A417DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD35BFFD2727C13400A417DC /* SCI_RecoveryUITests.swift in Sources */,
+				FD35BFFF2727C13400A417DC /* SCI_RecoveryUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD35BFF02727C13400A417DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD35BFDD2727C13200A417DC /* SCI Recovery */;
+			targetProxy = FD35BFEF2727C13400A417DC /* PBXContainerItemProxy */;
+		};
+		FD35BFFA2727C13400A417DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD35BFDD2727C13200A417DC /* SCI Recovery */;
+			targetProxy = FD35BFF92727C13400A417DC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FD35C0002727C13400A417DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FD35C0012727C13400A417DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FD35C0032727C13400A417DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05B92D35ED077DC9AB29553F /* Pods-SCI Recovery.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SCI Recovery/Preview Content\"";
+				DEVELOPMENT_TEAM = RPV6NTHTV7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.threem.SCI-Recovery";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FD35C0042727C13400A417DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE2E9CF0EB53E07CEE34A797 /* Pods-SCI Recovery.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SCI Recovery/Preview Content\"";
+				DEVELOPMENT_TEAM = RPV6NTHTV7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.threem.SCI-Recovery";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FD35C0062727C13400A417DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14C084C53FE90F7C8E187092 /* Pods-SCI RecoveryTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RPV6NTHTV7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.threem.SCI-RecoveryTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SCI Recovery.app/SCI Recovery";
+			};
+			name = Debug;
+		};
+		FD35C0072727C13400A417DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 708E471065BAA3BEB4123689 /* Pods-SCI RecoveryTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RPV6NTHTV7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.threem.SCI-RecoveryTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SCI Recovery.app/SCI Recovery";
+			};
+			name = Release;
+		};
+		FD35C0092727C13400A417DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CFA76B5C624DE42C5C12DF6 /* Pods-SCI Recovery-SCI RecoveryUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RPV6NTHTV7;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.threem.SCI-RecoveryUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "SCI Recovery";
+			};
+			name = Debug;
+		};
+		FD35C00A2727C13400A417DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7A63943BB04C7A798B02E13 /* Pods-SCI Recovery-SCI RecoveryUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RPV6NTHTV7;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.threem.SCI-RecoveryUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "SCI Recovery";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FD35BFD92727C13200A417DC /* Build configuration list for PBXProject "SCI Recovery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD35C0002727C13400A417DC /* Debug */,
+				FD35C0012727C13400A417DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD35C0022727C13400A417DC /* Build configuration list for PBXNativeTarget "SCI Recovery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD35C0032727C13400A417DC /* Debug */,
+				FD35C0042727C13400A417DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD35C0052727C13400A417DC /* Build configuration list for PBXNativeTarget "SCI RecoveryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD35C0062727C13400A417DC /* Debug */,
+				FD35C0072727C13400A417DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD35C0082727C13400A417DC /* Build configuration list for PBXNativeTarget "SCI RecoveryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD35C0092727C13400A417DC /* Debug */,
+				FD35C00A2727C13400A417DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FD35BFD62727C13200A417DC /* Project object */;
+}

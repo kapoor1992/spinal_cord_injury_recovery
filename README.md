@@ -1,1 +1,2 @@
-# spinal_cord_injury_recovery
+# sci_recovery
+To explore recovery prediction for spinal cord injuries and educate on the models used.

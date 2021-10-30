@@ -1,0 +1,6 @@
+framework module Pods_SCI_Recovery_SCI_RecoveryUITests {
+  umbrella header "Pods-SCI Recovery-SCI RecoveryUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
