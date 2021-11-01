@@ -18,5 +18,20 @@ def load_dataset(input_path, output_path):
     df.to_csv(output_path, index=False)
     print(f'output dataset loaded to {output_path}')
 
+
+# By default, drop those with 90%+ missing values and only keep ASIA at discharge as target
+def get_dataset_df_x_y(input_path, output_path, target_col='ASIA - Discharge', drop_cols=[
+    'Anal Sensation - Admission', 
+    'Anal Contraction - Admission', 
+    'Family Income - Injury', 
+    'Neurologic Category - Discharge', 
+    'Level of Injury - Discharge']):
+    load_dataset(input_path, output_path)
+    
+    df = pd.read_csv(output_path)
+    df.drop(drop_cols, axis=1, inplace=True)
+    return df.drop([target_col], axis=1), df[target_col]
+
+
 if __name__ == '__main__':
     load_dataset('csvs/f1_public.csv', 'csvs/translated_dataset.csv')
