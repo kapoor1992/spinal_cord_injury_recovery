@@ -2,6 +2,7 @@ import sys
 sys.path.append('..')
 import pandas as pd
 import data.utils.f1_feature_translations as f1_feature_translations
+import data.utils.f1_categorical_transformations as f1_categorical_transformations
 import data.utils.f1_inclusion_cols as f1_inclusion_cols
 
 def load_dataset(input_path, output_path):
@@ -30,6 +31,9 @@ def get_dataset_df_x_y(input_path, output_path, target_col='ASIA - Discharge', d
     
     df = pd.read_csv(output_path)
     df.drop(drop_cols, axis=1, inplace=True)
+    df = f1_categorical_transformations.transform_all(df)
+    df.sort_values(by=['Injury Date'], inplace=True)
+
     return df.drop([target_col], axis=1), df[target_col]
 
 
