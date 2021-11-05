@@ -5,25 +5,30 @@ import numpy as np
 def insert_zeroes(df):
     return df.replace('Unknown', 0)
 
+'''
+def insert_zeroes(df, col, encoding):
+    return df[col].replace('Unknown', encoding)
+'''
+
 def get_one_hot_features():
     return [
         'Race',
         'Marital Status - Injury',
-        'Education - Injury',
+        'Education - Injury',   # ordinal
         'Occupation Status - Injury',
         'Occupation Code - Injury',
         'Primary Insurance',
         'Anxiety - History',
         'Neurologic Category - Admission',
-        'Level of Injury - Admission'
+        'Level of Injury - Admission' # ordinal
     ]
 
 def get_ordinal_features():
     return {
-        'Injury Date' : None,
-        'Height - Admission' : None,
-        'Weight - Admission' : None,
-        'Age - Injury' : {
+        'Injury Date' : None, # no unknowns
+        'Height - Admission' : None, # unknown = median
+        'Weight - Admission' : None, # unknown = median
+        'Age - Injury' : { # unknown = mode
             '0-14y' : 1,
             '15-29y' : 2,
             '30-44y' : 3,
@@ -31,7 +36,7 @@ def get_ordinal_features():
             '60-74y' : 5,
             '75+y' : 6
         },
-        'Daily Alcohol - History' : {
+        'Daily Alcohol - History' : { # unknown = 0
             '0' : 1,
             '1-2' : 2,
             '3-4' : 3,
@@ -39,27 +44,27 @@ def get_ordinal_features():
             '7-9' : 5,
             '10+' : 6
         },
-        'ASIA - Admission' : {
+        'ASIA - Admission' : { # one hot
             'A' : 1,
             'B' : 2,
             'C' : 3,
             'D' : 4,
             'E' : 5
         },
-        'ASIA - Discharge' : {
+        'ASIA - Discharge' : { # # unknown = DROP ROWS
             'A' : 1,
             'B' : 2,
             'C' : 3,
             'D' : 4,
             'E' : 5
         },
-        'Loss of Consciousness - Injury' : {
+        'Loss of Consciousness - Injury' : { # unknown = 1
             'False' : 1,
             '<=30min' : 2,
             '31min-24hrs' : 3,
             '24hrs+' : 4
         },
-        'TBI Likelihood - Injury' : {
+        'TBI Likelihood - Injury' : { # unknown = 1
             'Improbable' : 1,
             'Possible' : 2,
             'Mild' : 3,
@@ -67,27 +72,27 @@ def get_ordinal_features():
             'Severe' : 5
         },
         # The ones below could be booleans but the NaNs really hurt us.
-        'Sex' : {
+        'Sex' : { # one hot if lots of unknowns (make "other" unknown), drop "other" if no unknowns and make this bool
             'Male' : 1, 
             'Female' : 2,
             'Other' : 3
         },
-        'Veteran' : {
+        'Veteran' : { # unknown = false
             'False' : 1,
             'True' : 2
         },
-        'Depression - History' : {
+        'Depression - History' : { # unknown = false
             'False' : 1,
             'True' : 2
         },
-        'Diabetes - History' : {
+        'Diabetes - History' : { # unknown = false
             'False' : 1,
             'Medication Controlled' : 2,
             'Lifestyle Controlled' : 2,
             'Not Controlled' : 2,
             'Unknown If Controlled' : 2
         },
-        'Loss of Memory - Injury' : {
+        'Loss of Memory - Injury' : { # unknown = false
             'False' : 1,
             'True' : 2
         }
