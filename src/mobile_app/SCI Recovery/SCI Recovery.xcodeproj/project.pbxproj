@@ -20,6 +20,13 @@
 		FD35C00C2727C50B00A417DC /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD35C00B2727C50B00A417DC /* RequestModel.swift */; };
 		FD35C00E2727C52600A417DC /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD35C00D2727C52600A417DC /* ResponseModel.swift */; };
 		FD35C0102727C5F700A417DC /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD35C00F2727C5F700A417DC /* APIController.swift */; };
+		FD6806982734D36D007DBBC8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6806972734D36D007DBBC8 /* Extensions.swift */; };
+		FD68069D2734E3AD007DBBC8 /* NavBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD68069C2734E3AD007DBBC8 /* NavBarItem.swift */; };
+		FD68069F2734E5CE007DBBC8 /* PreventionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD68069E2734E5CE007DBBC8 /* PreventionView.swift */; };
+		FD6806A12734E612007DBBC8 /* TreatmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6806A02734E612007DBBC8 /* TreatmentView.swift */; };
+		FD6806A32734E638007DBBC8 /* RecoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6806A22734E638007DBBC8 /* RecoveryView.swift */; };
+		FD6806A52734E662007DBBC8 /* PredictionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6806A42734E662007DBBC8 /* PredictionView.swift */; };
+		FD6806A72734E718007DBBC8 /* CalculateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6806A62734E718007DBBC8 /* CalculateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +68,13 @@
 		FD35C00B2727C50B00A417DC /* RequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
 		FD35C00D2727C52600A417DC /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		FD35C00F2727C5F700A417DC /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		FD6806972734D36D007DBBC8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FD68069C2734E3AD007DBBC8 /* NavBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarItem.swift; sourceTree = "<group>"; };
+		FD68069E2734E5CE007DBBC8 /* PreventionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreventionView.swift; sourceTree = "<group>"; };
+		FD6806A02734E612007DBBC8 /* TreatmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentView.swift; sourceTree = "<group>"; };
+		FD6806A22734E638007DBBC8 /* RecoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryView.swift; sourceTree = "<group>"; };
+		FD6806A42734E662007DBBC8 /* PredictionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionView.swift; sourceTree = "<group>"; };
+		FD6806A62734E718007DBBC8 /* CalculateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateView.swift; sourceTree = "<group>"; };
 		FF996C93B77AC0C4033D3C8F /* Pods_SCI_RecoveryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SCI_RecoveryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -147,6 +161,13 @@
 				FD35C00B2727C50B00A417DC /* RequestModel.swift */,
 				FD35C00D2727C52600A417DC /* ResponseModel.swift */,
 				FD35C00F2727C5F700A417DC /* APIController.swift */,
+				FD6806972734D36D007DBBC8 /* Extensions.swift */,
+				FD68069C2734E3AD007DBBC8 /* NavBarItem.swift */,
+				FD68069E2734E5CE007DBBC8 /* PreventionView.swift */,
+				FD6806A02734E612007DBBC8 /* TreatmentView.swift */,
+				FD6806A22734E638007DBBC8 /* RecoveryView.swift */,
+				FD6806A42734E662007DBBC8 /* PredictionView.swift */,
+				FD6806A62734E718007DBBC8 /* CalculateView.swift */,
 			);
 			path = "SCI Recovery";
 			sourceTree = "<group>";
@@ -415,10 +436,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD35BFE42727C13200A417DC /* ContentView.swift in Sources */,
+				FD6806982734D36D007DBBC8 /* Extensions.swift in Sources */,
+				FD6806A12734E612007DBBC8 /* TreatmentView.swift in Sources */,
 				FD35BFE22727C13200A417DC /* SCI_RecoveryApp.swift in Sources */,
+				FD6806A52734E662007DBBC8 /* PredictionView.swift in Sources */,
 				FD35C00E2727C52600A417DC /* ResponseModel.swift in Sources */,
+				FD6806A32734E638007DBBC8 /* RecoveryView.swift in Sources */,
+				FD6806A72734E718007DBBC8 /* CalculateView.swift in Sources */,
+				FD68069D2734E3AD007DBBC8 /* NavBarItem.swift in Sources */,
 				FD35C00C2727C50B00A417DC /* RequestModel.swift in Sources */,
 				FD35C0102727C5F700A417DC /* APIController.swift in Sources */,
+				FD68069F2734E5CE007DBBC8 /* PreventionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,7 @@ target 'SCI Recovery' do
   source 'https://github.com/CocoaPods/Specs.git'
   #pod 'HS-Font-Icons'
   pod 'MaterialDesignSymbol'
+  pod 'PagerTabStripView', '~> 3.0'
 
   target 'SCI RecoveryTests' do
     inherit! :search_paths

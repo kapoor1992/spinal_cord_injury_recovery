@@ -16,23 +16,27 @@ PODS:
     - AFNetworking/NSURLSession
   - Alamofire (5.4.4)
   - MaterialDesignSymbol (2.6.9)
+  - PagerTabStripView (3.0.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - Alamofire (~> 5.4)
   - MaterialDesignSymbol
+  - PagerTabStripView (~> 3.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - Alamofire
     - MaterialDesignSymbol
+    - PagerTabStripView
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   MaterialDesignSymbol: 01d9101368f06f3663923b7c872b13e1706b7aef
+  PagerTabStripView: 39ff1bb8cb1bee877c7a21740cede99b45fd3355
 
-PODFILE CHECKSUM: d446a0636553c27bcc10f1192939e1fbc229819b
+PODFILE CHECKSUM: f9293d21cad2f7f8220c97be3ea1f6d37e628939
 
 COCOAPODS: 1.11.2
