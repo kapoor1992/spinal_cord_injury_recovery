@@ -1,11 +1,13 @@
 name: sci
 channels:
+  - conda-forge
   - defaults
 dependencies:
   - blas=1.0=mkl
   - bottleneck=1.3.2=py38h2a96729_1
-  - ca-certificates=2021.10.26=haa95532_2
-  - certifi=2021.10.8=py38haa95532_0
+  - ca-certificates=2021.10.8=h5b45459_0
+  - certifi=2021.10.8=py38haa244fe_1
+  - falcon=3.0.1=py38h294d835_0
   - icc_rt=2019.0.0=h0cc432a_1
   - intel-openmp=2021.4.0=haa95532_3556
   - joblib=1.1.0=pyhd3eb1b0_0
@@ -16,11 +18,12 @@ dependencies:
   - numexpr=2.7.3=py38hb80d3ca_1
   - numpy=1.21.2=py38hfca59bb_0
   - numpy-base=1.21.2=py38h0829f74_0
-  - openssl=1.1.1l=h2bbff1b_0
+  - openssl=1.1.1l=h8ffe710_0
   - pandas=1.3.4=py38h6214cd6_0
   - pip=21.0.1=py38haa95532_0
   - python=3.8.8=hdbf39b2_5
   - python-dateutil=2.8.2=pyhd3eb1b0_0
+  - python_abi=3.8=2_cp38
   - pytz=2021.3=pyhd3eb1b0_0
   - scikit-learn=1.0.1=py38hf11a4ad_0
   - scipy=1.7.1=py38hbe87c03_2
