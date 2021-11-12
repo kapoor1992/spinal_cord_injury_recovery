@@ -1,6 +1,7 @@
 import sys
 sys.path.append('..')
-import data.utils.f1_categorical_transformations as f1_categorical_transformations
+sys.path.append('../..')
+import ml.data.utils.f1_categorical_transformations as f1_categorical_transformations
 import pandas as pd
 import json
 import pickle
@@ -20,7 +21,7 @@ def json_to_df(json_model, expected_features):
     
     return df.reindex(sorted(df.columns), axis=1)
 
-def infer(json_model, pickle_path):
+def infer(json_model, pickle_path='pickles/random_forest.pkl'):
     with open(pickle_path, 'rb') as f:
         clf = pickle.load(f)
     
@@ -33,11 +34,11 @@ def infer(json_model, pickle_path):
     return reverse_asia_mapper[prediction]
 
 
-def main(json_path='input.json', pickle_path='pickles/random_forest.pkl'):
+def main(json_path='input.json'):
     with open(json_path) as json_data:
         json_model = json.load(json_data)
     
-    print(infer(json_model, pickle_path))
+    print(infer(json_model))
 
 if __name__ == '__main__':
     main()

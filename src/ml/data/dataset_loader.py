@@ -1,5 +1,3 @@
-import sys
-sys.path.append('..')
 import pandas as pd
 import data.utils.f1_feature_translations as f1_feature_translations
 import data.utils.f1_categorical_transformations as f1_categorical_transformations
