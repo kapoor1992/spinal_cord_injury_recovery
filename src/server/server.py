@@ -11,7 +11,7 @@ class GetInference:
         json_data = request.bounded_stream.read()
         json_model = json.loads(json_data)
 
-        result = inference.infer(json_model)
+        result = inference.infer(json_model, pickle_path='../ml/modelling/pickles')
 
         response.body = json.dumps({'Prediction' : result})
         response.status = falcon.HTTP_200

@@ -21,8 +21,8 @@ def json_to_df(json_model, expected_features):
     
     return df.reindex(sorted(df.columns), axis=1)
 
-def infer(json_model, pickle_path='pickles/random_forest.pkl'):
-    with open(pickle_path, 'rb') as f:
+def infer(json_model, pickle_path='pickles', pickle_name='random_forest.pkl'):
+    with open(f'{pickle_path}/{pickle_name}', 'rb') as f:
         clf = pickle.load(f)
     
     test_x = json_to_df(json_model, clf.inference_features)
