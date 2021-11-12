@@ -62,6 +62,9 @@ def get_train_test_split(df, target_col='ASIA - Discharge', injury_date_start=20
 
     test_x = df_test.drop([target_col], axis=1)
     test_y = df_test[target_col]
+
+    train_x = train_x.reindex(sorted(train_x.columns), axis=1)
+    test_x = test_x.reindex(sorted(test_x.columns), axis=1)
     
     print(f'{df_train.shape[0] / df.shape[0]} : {df_test.shape[0] / df.shape[0]} split for testing starting at injury date {injury_date_start}.')
 

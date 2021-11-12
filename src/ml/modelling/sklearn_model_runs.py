@@ -22,7 +22,6 @@ def main():
     # Only do these lines once.
     np.random.seed(2)
     df = dataset_loader.get_dataset_df('../data/csvs/f1_public.csv', '../data/csvs/translated_dataset.csv')
-    df = df.reindex(sorted(df.columns), axis=1)
     train_x, train_y, test_x, test_y = dataset_loader.get_train_test_split(df)
     
     # Add model runs here.

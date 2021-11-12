@@ -23,8 +23,8 @@ def infer(json_model, pickle_path):
     with open(pickle_path, 'rb') as f:
         clf = pickle.load(f)
     
-    df = json_to_df(json_model, clf.inference_features)
-    prediction = clf.predict(df)[0]
+    test_x = json_to_df(json_model, clf.inference_features)
+    prediction = clf.predict(test_x)[0]
 
     asia_mapper = f1_categorical_transformations.get_ordinal_features()['ASIA - Discharge']
     reverse_asia_mapper = {v: k for k, v in asia_mapper.items()}
