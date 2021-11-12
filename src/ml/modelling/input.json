@@ -1,0 +1,21 @@
+{
+    "Age - Injury": "15-29y",
+    "Sex": "Male",
+    "Level of Injury - Admission": "C06",
+    "Education - Injury": "High School",
+    "Veteran": "False",
+    "Depression - History": "False",
+    "Diabetes - History": "False",
+    "Daily Alcohol - History": "0",
+    "Loss of Consciousness - Injury": "False",
+    "Loss of Memory - Injury": "False",
+    "TBI Likelihood - Injury": "Improbable",
+    "Race": "White",
+    "Marital Status - Injury": "Never Married",
+    "Occupation Status - Injury": "Working",
+    "Occupation Code - Injury": "Precision Craft and Repair",
+    "Primary Insurance": "Unknown",
+    "Anxiety - History": "Unknown",
+    "Neurologic Category - Admission": "Incomplete Tetraplegic",
+    "ASIA - Admission": "Unknown"
+}

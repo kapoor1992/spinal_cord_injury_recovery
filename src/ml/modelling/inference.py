@@ -2,6 +2,7 @@ import sys
 sys.path.append('..')
 import data.utils.f1_categorical_transformations as f1_categorical_transformations
 import pandas as pd
+import json
 import pickle
 
 def json_to_df(json_model, expected_features):
@@ -31,26 +32,12 @@ def infer(json_model, pickle_path):
     
     return reverse_asia_mapper[prediction]
 
-json_model = {
-    "Age - Injury" : "15-29y",
-    "Sex" : "Male",
-    "Level of Injury - Admission" : "C06",
-    "Education - Injury" : "High School",
-    "Veteran" : "False",
-    "Depression - History" : "False",
-    "Diabetes - History" : "False",
-    "Daily Alcohol - History" : "0",
-    "Loss of Consciousness - Injury" : "False",
-    "Loss of Memory - Injury" : "False",
-    "TBI Likelihood - Injury" : "Improbable",
-    "Race" : "White",
-    "Marital Status - Injury" : "Never Married",
-    "Occupation Status - Injury" : "Working",
-    "Occupation Code - Injury" : "Precision Craft and Repair",
-    "Primary Insurance" : "Unknown",
-    "Anxiety - History" : "Unknown",
-    "Neurologic Category - Admission" : "Incomplete Tetraplegic",
-    "ASIA - Admission" : "Unknown"
-}
 
-print(infer(json_model, 'pickles/random_forest.pkl'))
+def main(json_path='input.json', pickle_path='pickles/random_forest.pkl'):
+    with open(json_path) as json_data:
+        json_model = json.load(json_data)
+    
+    print(infer(json_model, pickle_path))
+
+if __name__ == '__main__':
+    main()
