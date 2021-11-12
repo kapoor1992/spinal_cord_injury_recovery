@@ -16,8 +16,8 @@ def json_to_df(json_model, expected_features):
     
     for feature in zeroed_one_hot_features:
         df[feature] = 0
-
-    return df
+    
+    return df.reindex(sorted(df.columns), axis=1)
 
 def infer(json_model, pickle_path):
     with open(pickle_path, 'rb') as f:
@@ -34,23 +34,23 @@ def infer(json_model, pickle_path):
 json_model = {
     "Age - Injury" : "15-29y",
     "Sex" : "Male",
-    "Level of Injury - Admission" : "C05",
+    "Level of Injury - Admission" : "C06",
     "Education - Injury" : "High School",
     "Veteran" : "False",
     "Depression - History" : "False",
     "Diabetes - History" : "False",
     "Daily Alcohol - History" : "0",
-    "Loss of Consciousness - Injury" : "<=30min",
+    "Loss of Consciousness - Injury" : "False",
     "Loss of Memory - Injury" : "False",
     "TBI Likelihood - Injury" : "Improbable",
-    "Race" : "Asian",
+    "Race" : "White",
     "Marital Status - Injury" : "Never Married",
     "Occupation Status - Injury" : "Working",
-    "Occupation Code - Injury" : "Service",
-    "Primary Insurance" : "Other Government",
-    "Anxiety - History" : "False",
+    "Occupation Code - Injury" : "Precision Craft and Repair",
+    "Primary Insurance" : "Unknown",
+    "Anxiety - History" : "Unknown",
     "Neurologic Category - Admission" : "Incomplete Tetraplegic",
-    "ASIA - Admission" : "B"
+    "ASIA - Admission" : "Unknown"
 }
 
 print(infer(json_model, 'pickles/random_forest.pkl'))
