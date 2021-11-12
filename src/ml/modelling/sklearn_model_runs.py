@@ -8,6 +8,8 @@ from sklearn.ensemble import RandomForestClassifier
 def run_random_forest(train_x, train_y, test_x, test_y, num_trees):
     clf = RandomForestClassifier(n_estimators=num_trees)
     clf.fit(train_x, train_y)
+    
+    clf.inference_features = list(test_x.columns.values)
 
     with open('pickles/random_forest.pkl', 'wb') as f:
         pickle.dump(clf, f)

@@ -55,8 +55,8 @@ def get_ordinal_features_to_impute():
             'Bachelors Degree' : 5,
             'Masters Degree' : 6,
             'Doctorate' : 7,
-            'Other' : 'mode',
-            'Unknown' : 'mode'
+            'Other' : 3, # This is the mode. Hardcoding value so we don't need to query old mode during inference time.
+            'Unknown' : 3 # Same as above.
         }
     }
 
@@ -181,13 +181,18 @@ def transform_imputed_ordinal(df):
     for feature, mapping in get_ordinal_features_to_impute().items():
         df.replace({feature : mapping}, inplace=True)
 
+        # Dormant for now.
         df[feature].replace('mode', np.nan, inplace=True)
         df[feature].fillna(df[feature].mode().iloc[0], inplace=True)
         
         df[feature] = df[feature].astype('int64')
 
-def transform_ordinal(df):
+def transform_ordinal(df, inference_usage=False):
     for feature, mapping in get_ordinal_features().items():
+        # We don't need these at inference time.
+        if inference_usage and (feature == 'Injury Date' or feature == 'ASIA - Discharge'):
+            continue
+
         if mapping is not None:
             df.replace({feature : mapping}, inplace=True)
         # Need the double cast to workaround library bug.
