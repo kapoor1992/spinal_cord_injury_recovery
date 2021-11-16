@@ -11,7 +11,7 @@ import SwiftUI
 
 class APIController: ObservableObject {
     init() {
-        postData()
+        //postData()
     }
     
     // URL : 144.202.111.88
@@ -25,10 +25,10 @@ class APIController: ObservableObject {
           }
     }
 
-    func postData() {
-        let model = RequestModel(f1: "value1", f2: "value2", f3: "value3")
+    func postData(model: RequestModel) {
+        //let model = RequestModel(f1: "value1", f2: "value2", f3: "value3")
         
-        AF.request("http://144.202.111.88:8000/sample_post", method: .post, parameters: model, encoder: JSONParameterEncoder.default).responseJSON{ (response) in
+        AF.request("http://144.202.111.88:8000/PostInference", method: .post, parameters: model, encoder: JSONParameterEncoder.default).responseJSON{ (response) in
             guard let responseData = response.value else { return }
             print(responseData)
           }
