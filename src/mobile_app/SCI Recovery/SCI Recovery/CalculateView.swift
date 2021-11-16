@@ -5,13 +5,17 @@
 //  Created by Tolga Saygi on 11/4/21.
 //
 
+import Alamofire
+import SwiftyJSON
 import SwiftUI
 import MaterialDesignSymbol
+import ExytePopupView
 
 struct CalculateView: View {
     @State var apiController = APIController()
     @State var username: String = ""
     @State var isPrivate: Bool = true
+    @State var result: String = ""
     var ageOptions = ["0-14y", "15-29y", "30-44y", "45-59y", "60-74y", "75+y", "Unknown"]
     var sexOptions = ["Male", "Female", "Unknown"]
     var loiAdmissionOptions = ["C UNKNOWN", "C01", "C02", "C03", "C04", "C05", "C06", "C07", "C08",
@@ -21,7 +25,7 @@ struct CalculateView: View {
                             "Bachelors Degree", "Masters Degree", "Doctorate", "Other", "Unknown"]
     var diabetesOptions = ["False", "Medication Controlled", "Lifestyle Controlled", "Not Controlled",
                            "Unknown If Controlled", "Unknown"]
-    var alcoholOptions = ["1-2", "3-4", "5-6", "7-9", "10+", "Unknown"]
+    var alcoholOptions = ["0", "1-2", "3-4", "5-6", "7-9", "10+", "Unknown"]
     var raceOptions = ["White", "Black", "Native American", "Asian", "Multiracial", "Unknown"]
     var maritalOptions = ["Never Married", "Married", "Divorced", "Separated", "Widowed", "Other",
                           "Living Unmarried With Partner", "Unknown"]
@@ -62,6 +66,7 @@ struct CalculateView: View {
     @State var defaultConsciousness = ""
     @State var lostMemory: Bool = false
     @State var defaultTbi = ""
+    @State var showingAlert = false
     
     init(){
         let navigationBarAppearance = UINavigationBarAppearance()
@@ -229,9 +234,24 @@ struct CalculateView: View {
                  
                  Section {
                      Button(action: {
-                         let model = RequestModel(age: defaultAge, sex: defaultSex, loi: defaultLoi, education: defaultEducation, isVeteran: String(isVeteran), depression: String(hasDepression), diabetes: defaultDiabetes, dailyAlcohol: defaultAlcohol, lossOfCons: defaultConsciousness, lossOfMem: String(lostMemory), tbi: defaultTbi, race: defaultRace, marital: defaultMarital, occupStatus: defaultOccupation, occupCode: defaultOccupationCode, primaryInsurance: defaultInsurance, anxiety: defaultAnxiety, neuro: defaultNeurologic, asia: defaultAsia)
+                         let model = RequestModel(age: defaultAge, sex: defaultSex, loi: defaultLoi, education: defaultEducation, isVeteran: isVeteran ? "True" : "False", depression: hasDepression ? "True" : "False", diabetes: defaultDiabetes, dailyAlcohol: defaultAlcohol, lossOfCons: defaultConsciousness, lossOfMem: lostMemory ? "True" : "False", tbi: defaultTbi, race: defaultRace, marital: defaultMarital, occupStatus: defaultOccupation, occupCode: defaultOccupationCode, primaryInsurance: defaultInsurance, anxiety: defaultAnxiety, neuro: defaultNeurologic, asia: defaultAsia)
                          print(model)
-                         apiController.postData(model: model)
+                         apiController.postData(model: model) { data in
+                             print(data)
+                             /*do {
+                                 result = try data.get().prediction
+                             } catch {
+                                 return
+                             }*/
+                             result = data.prediction
+                             showingAlert = true
+                         }
+                         /*var result = apiController.postData(model: model) != nil {
+                             .alert("Result: " + result, isPresented: $showingAlert) {
+                                         Button("OK", role: .cancel) { }
+                                     }
+                         }*/
+
                      }) {
                          Text("Estimate Your ASIA Classification at Discharge")
                      }
@@ -240,6 +260,12 @@ struct CalculateView: View {
              .navigationBarHidden(true)
              .navigationBarTitle(Text("Home"))
              .edgesIgnoringSafeArea([.top, .bottom])
+             .popup(isPresented: $showingAlert, type: .`default`/* autohideIn: 2*/) {
+                         Text("Prediction: " + result)
+                             .frame(width: 200, height: 60)
+                             .background(Color(red: 0.85, green: 0.8, blue: 0.95))
+                             .cornerRadius(30.0)
+                     }
          }
         /*Form {
             HStack(alignment: .center, spacing: 5.0) {
@@ -293,4 +319,19 @@ struct CalculateView: View {
             }
         }*/
     }
+    
+    /*func postData(model: RequestModel, completion: @escaping (Result<Any, Error>) -> Void) {
+        AF.request("http://144.202.111.88:8000/PostInference", method: .post, parameters: model, encoder: JSONParameterEncoder.default).responseJSON{ (response) in
+            switch response.result {
+            case .success(let JSON): // stores the json file in JSON variable
+                // the JSON file is printed correctly
+                print("Validation Successful with response JSON \(JSON)")
+                // this variable is seen as nil outside this function (even in return)
+                completion(.success(JSON))
+            case .failure(let error):
+                print("Request failed with error \(error)")
+                completion(.failure(error))
+            }
+        }
+    }*/
 }

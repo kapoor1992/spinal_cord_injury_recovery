@@ -1,5 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-SCI Recovery-SCI RecoveryUITests/Pods-SCI Recovery-SCI RecoveryUITests-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/ExytePopupView/ExytePopupView.framework
 ${BUILT_PRODUCTS_DIR}/MaterialDesignSymbol/MaterialDesignSymbol.framework
 ${BUILT_PRODUCTS_DIR}/PagerTabStripView/PagerTabStripView.framework
+${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework

@@ -8,13 +8,9 @@
 import Foundation
 
 struct ResponseModel : Decodable {
-    var score: String
-    var description: String
-    var color: String
+    var prediction: String
     
     enum CodingKeys: String, CodingKey {
-        case score
-        case description
-        case color
+        case prediction = "Prediction"
     }
 }

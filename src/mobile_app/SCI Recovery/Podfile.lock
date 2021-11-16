@@ -15,28 +15,36 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - Alamofire (5.4.4)
+  - ExytePopupView (1.0.2)
   - MaterialDesignSymbol (2.6.9)
   - PagerTabStripView (3.0.0)
+  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - Alamofire (~> 5.4)
+  - ExytePopupView
   - MaterialDesignSymbol
   - PagerTabStripView (~> 3.0)
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - Alamofire
+    - ExytePopupView
     - MaterialDesignSymbol
     - PagerTabStripView
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  ExytePopupView: b365220b2be506f23a4953e61b5b5dfe9c5b2da6
   MaterialDesignSymbol: 01d9101368f06f3663923b7c872b13e1706b7aef
   PagerTabStripView: 39ff1bb8cb1bee877c7a21740cede99b45fd3355
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: f9293d21cad2f7f8220c97be3ea1f6d37e628939
+PODFILE CHECKSUM: a29d0ba50adeee4ea2d0c3eaa8942ceb8eb363cc
 
 COCOAPODS: 1.11.2
