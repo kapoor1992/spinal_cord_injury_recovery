@@ -20,7 +20,7 @@ class PostInference:
     def on_post(self, req, resp):
         """Handles POST requests"""
         raw_json = req.bounded_stream.read()
-        #print(raw_json)
+        print(raw_json)
         json_model = json.loads(raw_json)
         result = inference.infer(json_model, pickle_path='../ml/modelling/pickles')
 
