@@ -21,7 +21,7 @@ def json_to_df(json_model, expected_features):
     
     return df.reindex(sorted(df.columns), axis=1)
 
-def infer(json_model, pickle_path='pickles', pickle_name='random_forest.pkl'):
+def infer(json_model, pickle_path='pickles', pickle_name='model.pkl'):
     with open(f'{pickle_path}/{pickle_name}', 'rb') as f:
         clf = pickle.load(f)
     
@@ -31,7 +31,7 @@ def infer(json_model, pickle_path='pickles', pickle_name='random_forest.pkl'):
     asia_mapper = f1_categorical_transformations.get_ordinal_features()['ASIA - Discharge']
     reverse_asia_mapper = {v: k for k, v in asia_mapper.items()}
     
-    return reverse_asia_mapper[prediction]
+    return f'ASIA {reverse_asia_mapper[prediction]}'
 
 
 def main(json_path='input.json'):
