@@ -6,4 +6,3 @@ __pycache__/
 
 **/docs/*.pdf
 **/csvs/*.csv
-**/pickles/*.pkl
