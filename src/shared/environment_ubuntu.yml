@@ -25,8 +25,6 @@ dependencies:
   - mkl_random=1.2.2=py38h51133e4_0
   - ncurses=6.3=h7f8727e_2
   - numexpr=2.7.3=py38h22e1b3c_1
-  - numpy=1.21.2=py38h20f2e39_0
-  - numpy-base=1.21.2=py38h79a1101_0
   - openssl=1.1.1l=h7f98852_0
   - pandas=1.3.4=py38h8c16a72_0
   - pip=21.2.4=py38h06a4308_0
@@ -45,4 +43,21 @@ dependencies:
   - wheel=0.37.0=pyhd3eb1b0_1
   - xz=5.2.5=h7b6447c_0
   - zlib=1.2.11=h7b6447c_3
+  - pip:
+    - cloudpickle==2.0.0
+    - cycler==0.11.0
+    - fonttools==4.28.3
+    - kiwisolver==1.3.2
+    - llvmlite==0.37.0
+    - matplotlib==3.5.0
+    - numba==0.54.1
+    - numpy==1.20.3
+    - packaging==21.3
+    - pillow==8.4.0
+    - pyparsing==3.0.6
+    - setuptools-scm==6.3.2
+    - shap==0.40.0
+    - slicer==0.0.7
+    - tomli==1.2.2
+    - tqdm==4.62.3
 prefix: /root/anaconda3/envs/sci
