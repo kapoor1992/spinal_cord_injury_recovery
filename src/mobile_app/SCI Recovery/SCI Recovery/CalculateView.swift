@@ -265,6 +265,12 @@ struct CalculateView: View {
                          Text("Estimate Your ASIA Classification at Discharge")
                      }
                  }
+                 
+                 HStack(alignment: .center, spacing: 5.0) {
+                     Text("The predictions made here are part of an ongoing research project to improve diagnoses of SCIs. They are not to be taken as guarantees of any kind and patients are strongly encouraged to consult their attending physicians to discuss recovery goals.")
+                         .padding()
+                         .foregroundColor(Color(UIColor(red: 1.00, green: 0.95, blue: 0.36, alpha: 1.00)))
+                 }.listRowBackground(Color(UIColor(red: 0.03, green: 0.35, blue: 0.36, alpha: 1.00)))
              }
              .navigationBarHidden(true)
              .navigationBarTitle(Text("Home"))
