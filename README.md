@@ -48,3 +48,18 @@ None!
 
 Server will be running on port 8000 at the POST endpoint `/PostInference`
 Sample REST body can be found at `src/ml/modelling/input.json` to test the server.
+
+## Requirements to run mobile client
+
+- macOS 12 or up
+- XCode 13 or up
+- Cocoapods installed (https://guides.cocoapods.org/using/getting-started.html)
+
+## Steps to run mobile client
+
+Path: "mobile app/SCI Recovery"
+
+1. Install pods: `pod install`
+2. Open XCode
+3. Open `SCI Recovery.xcworkspace` once pods are installed
+4. Run with any desired iOS Simulator
