@@ -28,6 +28,10 @@ struct RequestModel : Codable {
     var neuro: String
     var asia: String
     
+    func isReady() -> Bool {
+        return age != "" && sex != "" && loi != "" && education != "" && isVeteran != "" && depression != "" && diabetes != "" && dailyAlcohol != "" && lossOfCons != "" && lossOfMem != "" && tbi != "" && race != "" && marital != "" && occupStatus != "" && occupCode != "" && primaryInsurance != "" && anxiety != "" && neuro != "" && asia != ""
+    }
+    
     enum CodingKeys: String, CodingKey {
         case age = "Age - Injury"
         case sex = "Sex"

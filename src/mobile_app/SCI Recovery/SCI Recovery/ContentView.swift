@@ -37,6 +37,10 @@ struct ContentView: View {
                 .pagerTabItem {
                     NavBarItem(title: "SCI Prediction")
                 }
+            ImportanceView()
+                .pagerTabItem {
+                    NavBarItem(title: "Importance")
+                }
             CalculateView()
                 .pagerTabItem {
                     NavBarItem(title: "Calculate")

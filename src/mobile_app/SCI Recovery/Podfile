@@ -6,7 +6,7 @@ target 'SCI Recovery' do
   use_frameworks!
 
   # Pods for SCI Recovery
-  pod 'AFNetworking', '~> 3.0'
+  pod 'AFNetworking', '~> 4.0'
   #pod 'FBSDKCoreKit', '~> 4.9'
   pod 'Alamofire', '~> 5.4'
   source 'https://github.com/CocoaPods/Specs.git'

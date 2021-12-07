@@ -15,9 +15,13 @@ struct CalculateView: View {
     @State var apiController = APIController()
     @State var username: String = ""
     @State var isPrivate: Bool = true
-    @State var result: String = ""
+    @State var result: String = "" {
+        didSet {
+            showingAlert = true
+        }
+    }
     var ageOptions = ["0-14y", "15-29y", "30-44y", "45-59y", "60-74y", "75+y", "Unknown"]
-    var sexOptions = ["Male", "Female", "Unknown"]
+    var sexOptions = ["Male", "Female", "Other"]
     var loiAdmissionOptions = ["C UNKNOWN", "C01", "C02", "C03", "C04", "C05", "C06", "C07", "C08",
     "T UNKNOWN", "T01", "T02", "T03", "T04", "T05", "T06", "T07", "T08", "T09", "T10", "T11", "T12",
     "L UNKNOWN", "L01", "L02", "L03", "L04", "L05"]
@@ -67,6 +71,7 @@ struct CalculateView: View {
     @State var lostMemory: Bool = false
     @State var defaultTbi = ""
     @State var showingAlert = false
+    @State var showingError = false
     
     init(){
         let navigationBarAppearance = UINavigationBarAppearance()
@@ -235,16 +240,20 @@ struct CalculateView: View {
                  Section {
                      Button(action: {
                          let model = RequestModel(age: defaultAge, sex: defaultSex, loi: defaultLoi, education: defaultEducation, isVeteran: isVeteran ? "True" : "False", depression: hasDepression ? "True" : "False", diabetes: defaultDiabetes, dailyAlcohol: defaultAlcohol, lossOfCons: defaultConsciousness, lossOfMem: lostMemory ? "True" : "False", tbi: defaultTbi, race: defaultRace, marital: defaultMarital, occupStatus: defaultOccupation, occupCode: defaultOccupationCode, primaryInsurance: defaultInsurance, anxiety: defaultAnxiety, neuro: defaultNeurologic, asia: defaultAsia)
-                         print(model)
-                         apiController.postData(model: model) { data in
-                             print(data)
-                             /*do {
-                                 result = try data.get().prediction
-                             } catch {
-                                 return
-                             }*/
-                             result = data.prediction
-                             showingAlert = true
+                         if (model.isReady()) {
+                             print(model)
+                             apiController.postData(model: model) { data in
+                                 print(data)
+                                 /*do {
+                                     result = try data.get().prediction
+                                 } catch {
+                                     return
+                                 }*/
+                                 result = data.prediction
+                                 //showingAlert = true
+                             }
+                         } else {
+                             showingError = true
                          }
                          /*var result = apiController.postData(model: model) != nil {
                              .alert("Result: " + result, isPresented: $showingAlert) {
@@ -261,11 +270,11 @@ struct CalculateView: View {
              .navigationBarTitle(Text("Home"))
              .edgesIgnoringSafeArea([.top, .bottom])
              .popup(isPresented: $showingAlert, type: .`default`/* autohideIn: 2*/) {
-                         Text("Prediction: " + result)
-                             .frame(width: 200, height: 60)
-                             .background(Color(red: 0.85, green: 0.8, blue: 0.95))
-                             .cornerRadius(30.0)
-                     }
+                 createPopup(text: "Prediction: " + result, header: "Calculation Complete", buttonText: "Close")
+             }
+             .popup(isPresented: $showingError, type: .`default`/* autohideIn: 2*/) {
+                 createPopup(text: "Please fill all fields", header: "Error", buttonText: "Close")
+             }
          }
         /*Form {
             HStack(alignment: .center, spacing: 5.0) {
@@ -318,6 +327,44 @@ struct CalculateView: View {
                 }
             }
         }*/
+    }
+    
+    func createPopup(text: String, header: String, buttonText: String) -> some View {
+        VStack(spacing: 10) {
+            Image("okay")
+                .resizable()
+                .aspectRatio(contentMode: ContentMode.fit)
+                .frame(width: 100, height: 100)
+
+            Text(header)
+                //.foregroundColor(.white)
+                .foregroundColor(Color.black)
+                .fontWeight(.bold)
+
+            Text(text)
+                .font(.system(size: 12))
+                .foregroundColor(Color.black)
+                .fontWeight(.bold)
+
+            Spacer()
+
+            Button(action: {
+                //self.showingPopup = false
+            }) {
+                Text(buttonText)
+                    .font(.system(size: 14))
+                    .foregroundColor(.black)
+                    .fontWeight(.bold)
+            }
+            .frame(width: 100, height: 40)
+            .background(Color.white)
+            .cornerRadius(20.0)
+        }
+        .padding(EdgeInsets(top: 70, leading: 20, bottom: 40, trailing: 20))
+        .frame(width: 300, height: 400)
+        .background(Color(red: 0.85, green: 0.8, blue: 0.95))
+        .cornerRadius(10.0)
+        .shadow(color: Color(.sRGBLinear, white: 0, opacity: 0.13), radius: 10.0)
     }
     
     /*func postData(model: RequestModel, completion: @escaping (Result<Any, Error>) -> Void) {

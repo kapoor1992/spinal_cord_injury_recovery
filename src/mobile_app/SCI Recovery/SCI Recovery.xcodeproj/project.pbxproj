@@ -27,6 +27,7 @@
 		FD6806A32734E638007DBBC8 /* RecoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6806A22734E638007DBBC8 /* RecoveryView.swift */; };
 		FD6806A52734E662007DBBC8 /* PredictionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6806A42734E662007DBBC8 /* PredictionView.swift */; };
 		FD6806A72734E718007DBBC8 /* CalculateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6806A62734E718007DBBC8 /* CalculateView.swift */; };
+		FDDCE2DB2759C74F00D49085 /* ImportanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDCE2DA2759C74F00D49085 /* ImportanceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		FD6806A22734E638007DBBC8 /* RecoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryView.swift; sourceTree = "<group>"; };
 		FD6806A42734E662007DBBC8 /* PredictionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionView.swift; sourceTree = "<group>"; };
 		FD6806A62734E718007DBBC8 /* CalculateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateView.swift; sourceTree = "<group>"; };
+		FDDCE2D927536E4200D49085 /* SCI-Recovery-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SCI-Recovery-Info.plist"; sourceTree = SOURCE_ROOT; };
+		FDDCE2DA2759C74F00D49085 /* ImportanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportanceView.swift; sourceTree = "<group>"; };
 		FF996C93B77AC0C4033D3C8F /* Pods_SCI_RecoveryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SCI_RecoveryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -154,6 +157,7 @@
 		FD35BFE02727C13200A417DC /* SCI Recovery */ = {
 			isa = PBXGroup;
 			children = (
+				FDDCE2D927536E4200D49085 /* SCI-Recovery-Info.plist */,
 				FD35BFE12727C13200A417DC /* SCI_RecoveryApp.swift */,
 				FD35BFE32727C13200A417DC /* ContentView.swift */,
 				FD35BFE52727C13400A417DC /* Assets.xcassets */,
@@ -168,6 +172,7 @@
 				FD6806A22734E638007DBBC8 /* RecoveryView.swift */,
 				FD6806A42734E662007DBBC8 /* PredictionView.swift */,
 				FD6806A62734E718007DBBC8 /* CalculateView.swift */,
+				FDDCE2DA2759C74F00D49085 /* ImportanceView.swift */,
 			);
 			path = "SCI Recovery";
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 				FD35BFE42727C13200A417DC /* ContentView.swift in Sources */,
 				FD6806982734D36D007DBBC8 /* Extensions.swift in Sources */,
 				FD6806A12734E612007DBBC8 /* TreatmentView.swift in Sources */,
+				FDDCE2DB2759C74F00D49085 /* ImportanceView.swift in Sources */,
 				FD35BFE22727C13200A417DC /* SCI_RecoveryApp.swift in Sources */,
 				FD6806A52734E662007DBBC8 /* PredictionView.swift in Sources */,
 				FD35C00E2727C52600A417DC /* ResponseModel.swift in Sources */,
@@ -606,11 +612,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1003;
 				DEVELOPMENT_ASSET_PATHS = "\"SCI Recovery/Preview Content\"";
 				DEVELOPMENT_TEAM = RPV6NTHTV7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SCI-Recovery-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -620,7 +627,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.003;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.threem.SCI-Recovery";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -636,11 +643,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1003;
 				DEVELOPMENT_ASSET_PATHS = "\"SCI Recovery/Preview Content\"";
 				DEVELOPMENT_TEAM = RPV6NTHTV7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SCI-Recovery-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -650,7 +658,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.003;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.threem.SCI-Recovery";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
