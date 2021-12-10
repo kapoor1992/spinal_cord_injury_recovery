@@ -15,6 +15,7 @@ struct CalculateView: View {
     @State var apiController = APIController()
     @State var username: String = ""
     @State var isPrivate: Bool = true
+    @State var predictionResult: String = ""
     @State var result: String = "" {
         didSet {
             showingAlert = true
@@ -45,8 +46,8 @@ struct CalculateView: View {
                             "Other Government", "No Pay", "Private Funds", "Other", "Unknown"]
     var neurologicOptions = ["Incomplete Paraplegic", "Complete Paraplegic", "Minimal Deficit Paraplegic",
                              "Incomplete Tetraplegic", "Complete Tetraplegic", "Minimal Deficit Tetraplegic",
-                             "Normal", "Minimal Deficit Normal", "Unknown"]
-    var asiaOptions = ["A", "B", "C", "D", "E", "Unknown"]
+                             "Minimal Deficit Normal", "Unknown"]
+    var asiaOptions = ["A", "B", "C", "D", "Unknown"]
     var consciousnessOptions = ["False", "<=30min", "31min-24hrs", "24hrs+", "Unknown"]
     var tbiOptions = ["Improbable", "Possible", "Mild", "Moderate", "Severe", "Unknown"]
     
@@ -250,6 +251,7 @@ struct CalculateView: View {
                                      return
                                  }*/
                                  result = data.prediction
+                                 predictionResult = "Prediction: " + result
                                  //showingAlert = true
                              }
                          } else {
@@ -267,6 +269,14 @@ struct CalculateView: View {
                  }
                  
                  HStack(alignment: .center, spacing: 5.0) {
+                     Text(predictionResult)
+                         .bold()
+                         .padding()
+                         .foregroundColor(Color(UIColor(red: 1.00, green: 0.95, blue: 0.36, alpha: 1.00)))
+                         .hidden()
+                 }.listRowBackground(Color(UIColor(red: 0.03, green: 0.35, blue: 0.36, alpha: 1.00)))
+                 
+                 HStack(alignment: .center, spacing: 5.0) {
                      Text("The predictions made here are part of an ongoing research project to improve diagnoses of SCIs. They are not to be taken as guarantees of any kind and patients are strongly encouraged to consult their attending physicians to discuss recovery goals.")
                          .padding()
                          .foregroundColor(Color(UIColor(red: 1.00, green: 0.95, blue: 0.36, alpha: 1.00)))
@@ -276,7 +286,7 @@ struct CalculateView: View {
              .navigationBarTitle(Text("Home"))
              .edgesIgnoringSafeArea([.top, .bottom])
              .popup(isPresented: $showingAlert, type: .`default`/* autohideIn: 2*/) {
-                 createPopup(text: "Prediction: " + result, header: "Calculation Complete", buttonText: "Close")
+                 createPopup(text: predictionResult, header: "Calculation Complete", buttonText: "Close")
              }
              .popup(isPresented: $showingError, type: .`default`/* autohideIn: 2*/) {
                  createPopup(text: "Please fill all fields", header: "Error", buttonText: "Close")
