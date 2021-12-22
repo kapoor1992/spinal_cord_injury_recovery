@@ -48,6 +48,16 @@ def get_dataset_df(input_path, output_path, target_col='ASIA - Discharge', drop_
     print(f'Dataset shape: {df.shape}')
     return df
 
+# Undo one-hot encoding and return "real life" features.
+def get_practical_features(df):
+    ml_features = df.columns.tolist()
+    result = set()
+
+    for ml_feature in ml_features:
+        result.add(ml_feature.split('_')[0])
+    
+    return result
+
 def get_train_test_split(df, target_col='ASIA - Discharge', injury_date_start=2006):
     df_train = df[df['Injury Date'] < injury_date_start]
     df_test = df[df['Injury Date'] >= injury_date_start]
