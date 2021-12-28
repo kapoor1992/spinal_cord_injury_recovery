@@ -72,6 +72,7 @@ struct CalculateView: View {
     @State var lostMemory: Bool = false
     @State var defaultTbi = ""
     @State var showingAlert = false
+    @State var showingDisclaimer = false
     @State var showingError = false
     
     init(){
@@ -142,37 +143,6 @@ struct CalculateView: View {
                          Text("Is Veteran?")
                      }
                  }.font(.system(size: 15))
-                 
-                 /*Section(header: Text("Sex").foregroundColor(.white)
-                            .foregroundColor(.black)
-                            .font(.system(size: 15))
-                            .fontWeight(.bold)) {
-                     Picker(selection: $defaultSex, label: Text("Selected value")) {
-                         ForEach(sexOptions, id:\.self) { opt in
-                             Text(opt)
-                         }
-                     }
-                 }.font(.system(size: 15))*/
-                 
-                 /*Section(header: Text("Education - Injury").foregroundColor(.white)
-                            .foregroundColor(.black)
-                            .font(.system(size: 15))
-                            .fontWeight(.bold)) {
-                     Picker(selection: $defaultEducation, label: Text("Selected value")) {
-                         ForEach(educationOptions, id:\.self) { opt in
-                             Text(opt)
-                         }
-                     }
-                 }.font(.system(size: 15))*/
-                 
-                 /*Section(header: Text("Veteran").foregroundColor(.white)
-                            .foregroundColor(.black)
-                            .font(.system(size: 15))
-                            .fontWeight(.bold)) {
-                     Toggle(isOn: $isVeteran) {
-                         Text("Is Veteran?")
-                     }
-                 }.font(.system(size: 15))*/
                  
                  Section(header: Text("History").foregroundColor(.white)
                             .foregroundColor(.black)
@@ -291,58 +261,13 @@ struct CalculateView: View {
              .popup(isPresented: $showingError, type: .`default`/* autohideIn: 2*/) {
                  createPopup(text: "Please fill all fields", header: "Error", buttonText: "Close")
              }
+             .popup(isPresented: $showingDisclaimer, type: .`default`, autohideIn: 15) {
+                 createPopup(text: "This client application is created for informational purposes only. The predictions made here are part of an ongoing research project to improve diagnoses of SCIs. They are not to be taken as guarantees of any kind and patients are strongly encouraged to consult their attending physicians to discuss recovery goals.", header: "Warning", buttonText: "Dismiss")
+             }
+             .onAppear() {
+                 showingDisclaimer = true
+             }
          }
-        /*Form {
-            HStack(alignment: .center, spacing: 5.0) {
-                CircleImage(image: Image(materialDesignIcon: .report48px, size: 60, color: .white), borderColor: Color(UIColor(red: 0.96, green: 0.59, blue: 0.19, alpha: 1.00)), shadowRadius: 5).padding()
-                Spacer()
-                Text("Calculation")
-                    .bold()
-                    .padding()
-                    .font(.title)
-                    .foregroundColor(.white)
-                    .background(Color(UIColor(red: 0.96, green: 0.59, blue: 0.19, alpha: 1.00)))
-            }.listRowBackground(Color(UIColor(red: 0.03, green: 0.35, blue: 0.36, alpha: 1.00)))
-            
-            Section(header: Text("PROFILE").foregroundColor(.gray).bold()) {
-                TextField("Username", text: $username)
-                Toggle(isOn: $isPrivate) {
-                    Text("Private Account")
-                }
-            }.listRowBackground(Color(UIColor(red: 0.03, green: 0.35, blue: 0.36, alpha: 1.00)))
-            
-            Section(header: Text("NOTIFICATIONS").foregroundColor(.gray).bold()) {
-                Picker(selection: $defaultIndex, label: Text("Show Previews")) {
-                    ForEach(sexOptions, id:\.self) { opt in
-                        Text(opt)
-                    }
-                }.pickerStyle(SegmentedPickerStyle()).colorMultiply(.white).colorInvert()
-            }.listRowBackground(Color(UIColor(red: 0.03, green: 0.35, blue: 0.36, alpha: 1.00)))
-            
-            Section(header: Text("NOTIFICATIONS").foregroundColor(.gray).bold()) {
-                Picker(selection: $defaultIndex, label: Text("Show Previews")) {
-                    ForEach(loiAdmissionOptions.reversed(), id:\.self) { opt in
-                        Text(opt)
-                    }
-                }.pickerStyle(MenuPickerStyle()).colorMultiply(.white).colorInvert()
-            }.listRowBackground(Color(UIColor(red: 0.03, green: 0.35, blue: 0.36, alpha: 1.00)))
-            
-            Section(header: Text("ABOUT")) {
-                HStack {
-                    Text("Version")
-                    Spacer()
-                    Text("2.2.1")
-                }
-            }
-            
-            Section {
-                Button(action: {
-                    print("Perform an action here...")
-                }) {
-                    Text("Reset All Settings")
-                }
-            }
-        }*/
     }
     
     func createPopup(text: String, header: String, buttonText: String) -> some View {
@@ -350,7 +275,7 @@ struct CalculateView: View {
             Image("okay")
                 .resizable()
                 .aspectRatio(contentMode: ContentMode.fit)
-                .frame(width: 100, height: 100)
+                .frame(width: 50, height: 50)
 
             Text(header)
                 //.foregroundColor(.white)
@@ -382,19 +307,4 @@ struct CalculateView: View {
         .cornerRadius(10.0)
         .shadow(color: Color(.sRGBLinear, white: 0, opacity: 0.13), radius: 10.0)
     }
-    
-    /*func postData(model: RequestModel, completion: @escaping (Result<Any, Error>) -> Void) {
-        AF.request("http://144.202.111.88:8000/PostInference", method: .post, parameters: model, encoder: JSONParameterEncoder.default).responseJSON{ (response) in
-            switch response.result {
-            case .success(let JSON): // stores the json file in JSON variable
-                // the JSON file is printed correctly
-                print("Validation Successful with response JSON \(JSON)")
-                // this variable is seen as nil outside this function (even in return)
-                completion(.success(JSON))
-            case .failure(let error):
-                print("Request failed with error \(error)")
-                completion(.failure(error))
-            }
-        }
-    }*/
 }

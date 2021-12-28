@@ -11,7 +11,7 @@ import PagerTabStripView
 
 struct ContentView: View {
     @State var apiController = APIController()
-    @State var selection = 0
+    @State var selection = 5
     
     init(){
         let navigationBarAppearance = UINavigationBarAppearance()
