@@ -73,6 +73,12 @@ def main():
     df = dataset_loader.get_dataset_df('../data/csvs/f1_public.csv', '../data/csvs/translated_dataset.csv')
     train_x, train_y, test_x, test_y = dataset_loader.get_train_test_split(df)
     
+    print(f'Total samples:          {train_y.shape[0] + test_y.shape[0]}') # 21,049
+    print(f'Total training samples: {train_y.shape[0]}') # 18,924
+    print(f'Total testing samples:  {test_y.shape[0]}') # 2,125
+    print(f'Total ML features:      {train_x.shape[1]}') # 78
+    print(f'Total "real" features:  {len(dataset_loader.get_practical_features(train_x))}') # 19
+    
     # Add model runs here.
     # clf = run_random_forest(train_x, train_y, test_x, test_y, num_trees=1000)
     clf = run_elastic_net(train_x, train_y, test_x, test_y, penalty_type='elasticnet', iters=200, solver_name='saga', l1_ratio_frac=0.9)
