@@ -49,16 +49,6 @@ None!
 Server will be running on port 8000 at the POST endpoint `/PostInference`
 Sample REST body can be found at `src/ml/modelling/input.json` to test the server.
 
-## Requirements to run mobile client (iOS Device)
-- An iOS device running iOS 13 or up
-
-## Steps to run mobile client (iOS Device)
-![QR Code for the Testflight URL](TestflightQR.jpg)
-1. Using your iOS device scan the QR Code above or navigate to https://testflight.apple.com/join/qWvhNwVF
-2. Get the Apple's official TestFlight app through the App Store
-3. Come back to the URL and click "Start Testing" button to get the application through TestFlight
-4. After installing through the TestFlight, you may start using the mobile application
-
 ## Requirements to run mobile client (Simulator)
 
 - macOS 12 or up
@@ -73,3 +63,15 @@ Path: "mobile app/SCI Recovery"
 2. Open XCode
 3. Open `SCI Recovery.xcworkspace` once pods are installed
 4. Run with any desired iOS Simulator
+
+# [DEPRECATED]
+
+## Requirements to run mobile client (iOS Device)
+- An iOS device running iOS 13 or up
+
+## Steps to run mobile client (iOS Device)
+![QR Code for the Testflight URL](TestflightQR.jpg)
+1. Using your iOS device scan the QR Code above or navigate to https://testflight.apple.com/join/qWvhNwVF
+2. Get the Apple's official TestFlight app through the App Store
+3. Come back to the URL and click "Start Testing" button to get the application through TestFlight
+4. After installing through the TestFlight, you may start using the mobile application
