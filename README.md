@@ -4,6 +4,26 @@
 
 It contains the code for an iOS mobile application that provides educational content on spinal cord injuries (SCIs). There is also a Python inference server and machine learning code that is utlized by the mobile application to predict ASIA scores at hospital discharge time.
 
+## How is the codebase structured?
+
+|     Path                                           |     What does it   contain?                                           |
+|----------------------------------------------------|-----------------------------------------------------------------------|
+|     ~/                                             |     Everything (including this file)                                  |
+|     ~/src/                                         |     All code                                                          |
+|     ~/src/server/                                  |     Server-side API code                                              |
+|     ~/src/shared/                                  |     Anaconda environment files                                        |
+|     ~/src/mobile_app/SCI Recovery/                 |     iOS project                                                       |
+|     ~/src/mobile_app/SCI Recovery/SCI Recovery/    |     Core iOS Swift code                                               |
+|     ~/src/ml/                                      |     All ML code                                                       |
+|     ~/src/ml/notebooks/                            |     ML ad hoc research code                                           |
+|     ~/src/ml/modelling/                            |     ML training, testing, and feature   importance code               |
+|     ~/src/ml/modelling/pickles/                    |     ML model training outputs                                         |
+|     ~/src/ml/modelling/plots/                      |     ML feature importance graphs                                      |
+|     ~/src/ml/data/                                 |     ML data handling and transformation code                          |
+|     ~/src/ml/data/csvs/                            |     Raw dataset                                                       |
+|     ~/src/ml/data/docs/                            |     Raw dataset documentation                                         |
+|     ~/src/ml/data/utils/                           |     Commonly used utilities for data handling   and transformation    |
+
 ## Requirements to run machine learning server
 
 - Either Ubuntu or Windows 10
