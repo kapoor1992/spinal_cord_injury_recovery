@@ -4,10 +4,6 @@
 
 It contains the code for an iOS mobile application that provides educational content on spinal cord injuries (SCIs). There is also a Python inference server and machine learning code that is utlized by the mobile application to predict ASIA scores at hospital discharge time.
 
-## Presentation
-
-https://www.youtube.com/watch?v=Z8-Lqg_kHfM
-
 ## Requirements to run machine learning server
 
 - Either Ubuntu or Windows 10
