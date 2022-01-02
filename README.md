@@ -86,10 +86,10 @@ Path: "mobile app/SCI Recovery"
 
 # [DEPRECATED]
 
-## Requirements to run mobile client (iOS Device)
+### Requirements to run mobile client (iOS Device)
 - An iOS device running iOS 13 or up
 
-## Steps to run mobile client (iOS Device)
+### Steps to run mobile client (iOS Device)
 ![QR Code for the Testflight URL](TestflightQR.jpg)
 1. Using your iOS device scan the QR Code above or navigate to https://testflight.apple.com/join/qWvhNwVF
 2. Get the Apple's official TestFlight app through the App Store
