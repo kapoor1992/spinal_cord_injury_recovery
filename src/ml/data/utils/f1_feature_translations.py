@@ -140,15 +140,15 @@ def get_translations():
 			'9': 'Unknown'
 		}),
 		'APrimPay': FeatureTranslation('Primary Insurance', {
-			'1': 'Private Insurance',
-			'2': 'Medicare',
-			'3': 'Medicaid',
-			'4': "Workers' Compensation",
-			'5': 'VA',
-			'6': 'Other Government',
-			'7': 'No Pay',
-			'8': 'Private Funds',
-			'9': 'Other',
+			'1': 'True',
+			'2': 'True',
+			'3': 'True',
+			'4': 'True',
+			'5': 'True',
+			'6': 'True',
+			'7': 'False', # "No Pay"
+			'8': 'False',
+			'9': 'Unknown',
 			'77': 'Unknown',
 			'99': 'Unknown'
 		}),

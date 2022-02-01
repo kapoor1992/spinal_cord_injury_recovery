@@ -28,7 +28,8 @@ def get_dataset_df(input_path, output_path, target_col='ASIA - Discharge', drop_
     'Neurologic Category - Discharge',
     'Height - Admission',
     'Weight - Admission', 
-    'Level of Injury - Discharge']):
+    'Level of Injury - Discharge',
+    'Occupation Code - Injury']):
     load_dataset(input_path, output_path)
     
     df = pd.read_csv(output_path)

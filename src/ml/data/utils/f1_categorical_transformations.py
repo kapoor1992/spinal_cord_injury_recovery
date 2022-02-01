@@ -6,7 +6,6 @@ def get_one_hot_features():
         'Race',
         'Marital Status - Injury',
         'Occupation Status - Injury',
-        'Occupation Code - Injury',
         'Primary Insurance',
         'Anxiety - History',
         'Neurologic Category - Admission',
