@@ -36,12 +36,13 @@ def get_dataset_df(input_path, output_path, target_col='ASIA - Discharge', drop_
 
     df.drop(drop_cols, axis=1, inplace=True)
     df = df[df[target_col] != 'Unknown']
-    # Get rid of all unknown level of injury values. This is crucial to SCI prognosis in practice.
+    # Get rid of all unknown level of injury values and ASIA scores. This is crucial to SCI prognosis in practice.
     df = df[(df['Level of Injury - Admission'] != 'Unknown') & 
             (df['Level of Injury - Admission'] != 'C Unknown') & 
             (df['Level of Injury - Admission'] != 'T Unknown') & 
             (df['Level of Injury - Admission'] != 'L Unknown') & 
-            (df['Level of Injury - Admission'] != 'S Unknown')]
+            (df['Level of Injury - Admission'] != 'S Unknown') &
+            (df['ASIA - Admission'] != 'Unknown')]
     
     df = f1_categorical_transformations.transform_all(df)
     df.sort_values(by=['Injury Date'], inplace=True)
