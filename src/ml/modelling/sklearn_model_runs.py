@@ -4,7 +4,7 @@ sys.path.append('../..')
 import numpy as np
 import argparse
 import pickle
-from data import dataset_loader
+from data import custom_metrics, dataset_loader
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import precision_score,recall_score,f1_score
@@ -72,12 +72,17 @@ def main():
     np.random.seed(2)
     df = dataset_loader.get_dataset_df('../data/csvs/f1_public.csv', '../data/csvs/translated_dataset.csv')
     train_x, train_y, test_x, test_y = dataset_loader.get_train_test_split(df)
+
+    print('ASIA matches between admission and discharge in training set:')
+    train_matches_dict = custom_metrics.display_matches_dict(train_x, train_y)
+    print('ASIA matches between admission and discharge in testing set:')
+    test_matches_dict = custom_metrics.display_matches_dict(test_x, test_y)
     
-    print(f'Total samples:          {train_y.shape[0] + test_y.shape[0]}') # 21,049
-    print(f'Total training samples: {train_y.shape[0]}') # 18,924
-    print(f'Total testing samples:  {test_y.shape[0]}') # 2,125
-    print(f'Total ML features:      {train_x.shape[1]}') # 78
-    print(f'Total "real" features:  {len(dataset_loader.get_practical_features(train_x))}') # 19
+    print(f'Total samples:          {train_y.shape[0] + test_y.shape[0]}') # 20,790
+    print(f'Total training samples: {train_y.shape[0]}') # 18,737
+    print(f'Total testing samples:  {test_y.shape[0]}') # 2,053
+    print(f'Total ML features:      {train_x.shape[1]}') # 53
+    print(f'Total "real" features:  {len(dataset_loader.get_practical_features(train_x))}') # 18
     
     # Add model runs here.
     # clf = run_random_forest(train_x, train_y, test_x, test_y, num_trees=1000)
