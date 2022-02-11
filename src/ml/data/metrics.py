@@ -85,6 +85,17 @@ def display_admission_to_correct_dict(df_x=None, df_y=None, predictions=None, ad
     
     return admission_to_correct_dict
 
+def display_asia_improvement_metric(matches_dict, admission_to_correct_dict, only_rate=False):
+    for k, v in matches_dict.items():
+        if not only_rate:
+            print(f'ASIA {k} | correct predictions - same admission score    | {admission_to_correct_dict[k][1] - v[1]}')
+            print(f'ASIA {k} | wrong predictions - different admission score | {admission_to_correct_dict[k][2] - v[2]}')
+        
+        prediction_rate = admission_to_correct_dict[k][1] / (admission_to_correct_dict[k][1] + admission_to_correct_dict[k][2]) 
+        assumption_rate = v[1] / (v[1] + v[2])
+        print(f'ASIA {k} | correct rate - assuming admission score rate  | {round(prediction_rate - assumption_rate, 4)}')
+
+
 def run_metrics(clf, train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict):
     """
     Print ML classifier metrics on train and test
@@ -118,8 +129,16 @@ def run_metrics(clf, train_x, train_y, test_x, test_y, train_matches_dict, test_
 
     print('-----')
     print('Admission ASIA to correct prediction results (train set):')
-    display_admission_to_correct_dict(train_x, train_y, train_predictions)
+    train_admission_to_correct_dict = display_admission_to_correct_dict(train_x, train_y, train_predictions, only_rate=True)
     
     print('-----')
     print('Admission ASIA to correct prediction results (test set):')
-    display_admission_to_correct_dict(test_x, test_y, test_predictions)
+    test_admission_to_correct_dict = display_admission_to_correct_dict(test_x, test_y, test_predictions, only_rate=True)
+
+    print('-----')
+    print('Admission ASIA to correct prediction results improvement over assuming admission score (train set):')
+    display_asia_improvement_metric(train_matches_dict, train_admission_to_correct_dict, only_rate=True)
+
+    print('-----')
+    print('Admission ASIA to correct prediction results improvement over assuming admission score (test set):')
+    display_asia_improvement_metric(test_matches_dict, test_admission_to_correct_dict, only_rate=True)
