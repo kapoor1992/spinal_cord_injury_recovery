@@ -63,7 +63,7 @@ def main():
     print('-----')
 
     # Add model runs here.
-    # clf = run_random_forest(train_x, train_y, test_x, test_y, num_trees=1000)
+    # clf = run_random_forest(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict, num_trees=1000)
     clf = run_elastic_net(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict, 
                           penalty_type='elasticnet', iters=200, solver_name='saga', l1_ratio_frac=0.9)
 
