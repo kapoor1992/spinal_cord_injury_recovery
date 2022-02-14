@@ -139,6 +139,7 @@ def run_metrics(clf, train_x, train_y, test_x, test_y, train_matches_dict, test_
     print('Admission ASIA to correct prediction results improvement over assuming admission score (train set):')
     display_asia_improvement_metric(train_matches_dict, train_admission_to_correct_dict, only_rate=True)
 
+    # Most important for net gain improvement over using ASIA score in isolation.
     print('-----')
     print('Admission ASIA to correct prediction results improvement over assuming admission score (test set):')
     display_asia_improvement_metric(test_matches_dict, test_admission_to_correct_dict, only_rate=True)
