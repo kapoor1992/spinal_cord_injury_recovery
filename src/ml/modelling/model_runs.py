@@ -5,9 +5,36 @@ import numpy as np
 import argparse
 import pickle
 from data import dataset_loader, metrics
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.naive_bayes import GaussianNB
 from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.ensemble import VotingClassifier
 
+
+def run_naive_bayes(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict):
+    clf = GaussianNB()
+    clf.fit(train_x, train_y)
+    
+    clf.inference_features = list(test_x.columns.values)  
+    
+    print('-----')
+    print("Naive Bayes")
+    metrics.run_metrics(clf,train_x,train_y,test_x,test_y, train_matches_dict, test_matches_dict)
+    
+    return clf
+
+def run_logistic_regression(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict):
+    clf = LogisticRegression()
+    clf.fit(train_x, train_y)
+    
+    clf.inference_features = list(test_x.columns.values)  
+    
+    print('-----')
+    print("Logistic Regression")
+    metrics.run_metrics(clf,train_x,train_y,test_x,test_y, train_matches_dict, test_matches_dict)
+    
+    return clf
 
 def run_random_forest(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict, num_trees):
     clf = RandomForestClassifier(n_estimators=num_trees)
@@ -34,6 +61,30 @@ def run_elastic_net(train_x, train_y, test_x, test_y, train_matches_dict, test_m
 
     return clf
 
+def run_ensemble(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict):
+    #Elastic Net
+    el = LogisticRegression(penalty='elasticnet',max_iter=200,solver='saga',l1_ratio=.9)
+    el.fit(train_x, train_y)
+    
+    #Random Forest
+    rf = RandomForestClassifier(n_estimators=1000)
+    rf.fit(train_x, train_y)
+    
+    #KNN
+    knn = KNeighborsClassifier(n_neighbors=9)
+    knn.fit(train_x, train_y)    
+    
+    #Record Classifiers
+    estimators=[('elastic-net',el), ('random-forest',rf), ('k-nearest-neighbors',knn)]
+    
+    ensemble = VotingClassifier(estimators,voting='hard')
+    ensemble.fit(train_x, train_y)
+    ensemble.inference_features = list(test_x.columns.values)
+
+    print('-----')
+    print('Ensemble')
+    #Create Ensemble
+    metrics.run_metrics(ensemble,train_x,train_y,test_x,test_y, train_matches_dict, test_matches_dict)
 
 def main():
     # Only do these lines once.
@@ -53,7 +104,7 @@ def main():
     print('-----')
     print('ASIA matches between admission and discharge in testing set:')
     test_matches_dict = metrics.display_matches_dict(test_x, test_y)
-
+    
     print('-----')
     print(f'Total samples:          {train_y.shape[0] + test_y.shape[0]}') # 20,790
     print(f'Total training samples: {train_y.shape[0]}') # 18,737
@@ -63,9 +114,12 @@ def main():
     print('-----')
 
     # Add model runs here.
-    # clf = run_random_forest(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict, num_trees=1000)
-    clf = run_elastic_net(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict, 
-                          penalty_type='elasticnet', iters=200, solver_name='saga', l1_ratio_frac=0.9)
+    #clf = run_naive_bayes(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict)
+    #clf = run_logistic_regression(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict)
+    #clf = run_random_forest(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict, num_trees=1000)
+    #clf = run_elastic_net(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict, 
+    #                      penalty_type='elasticnet', iters=200, solver_name='saga', l1_ratio_frac=0.9)
+    clf = run_ensemble(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict)
 
     # Save model.
     with open('pickles/model.pkl', 'wb') as f:
