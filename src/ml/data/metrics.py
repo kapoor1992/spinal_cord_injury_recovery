@@ -17,7 +17,7 @@ def get_matches_dict(df_x, df_y):
 
     for i, row in df_x_copy.iterrows():
         for k, v in matches_dict.items():
-            if f'ASIA - Admission_{k}' in row and row[f'ASIA - Admission_{k}'] == 1:
+            if row[f'ASIA - Admission_{k}'] == 1:
                 if df_y_copy[i] == v[0]:
                     v[1] += 1
                 else:
@@ -37,10 +37,7 @@ def display_matches_dict(df_x=None, df_y=None, matches_dict=None, only_rate=Fals
         if not only_rate:
             print(f'ASIA {k} Matches:    {v[1]}')
             print(f'ASIA {k} Misses:     {v[2]}')
-        if v[1] == 0 and v[2] == 0:
-            print(f'ASIA {k} Match Rate: NaN')
-        else:    
-            print(f'ASIA {k} Match Rate: {round(v[1] / (v[1] + v[2]), 4)}')
+        print(f'ASIA {k} Match Rate: {round(v[1] / (v[1] + v[2]), 4)}')
     
     return matches_dict
 
@@ -64,7 +61,7 @@ def get_admission_to_correct_dict(df_x, df_y, predictions):
 
     for i, row in df_x_copy.iterrows():
         for k, v in admission_to_correct_dict.items():
-            if f'ASIA - Admission_{k}' in row and row[f'ASIA - Admission_{k}'] == 1:
+            if row[f'ASIA - Admission_{k}'] == 1:
                 if df_y_copy[i] == predictions[i]:
                     v[1] += 1
                 else:
@@ -84,10 +81,7 @@ def display_admission_to_correct_dict(df_x=None, df_y=None, predictions=None, ad
         if not only_rate:
             print(f'Admission ASIA {k} Correct:      {v[1]}')
             print(f'Admission ASIA {k} Wrong:        {v[2]}')
-        if v[1] == 0 and v[2] == 0:
-            print(f'Admission ASIA {k} Correct Rate: NaN')
-        else:
-            print(f'Admission ASIA {k} Correct Rate: {round(v[1] / (v[1] + v[2]), 4)}')
+        print(f'Admission ASIA {k} Correct Rate: {round(v[1] / (v[1] + v[2]), 4)}')
     
     return admission_to_correct_dict
 
@@ -96,12 +90,10 @@ def display_asia_improvement_metric(matches_dict, admission_to_correct_dict, onl
         if not only_rate:
             print(f'ASIA {k} | correct predictions - same admission score    | {admission_to_correct_dict[k][1] - v[1]}')
             print(f'ASIA {k} | wrong predictions - different admission score | {admission_to_correct_dict[k][2] - v[2]}')
-        if v[1] == 0 and v[2] == 0:
-            print(f'ASIA {k} | correct rate - assuming admission score rate  | NaN')
-        else:
-            prediction_rate = admission_to_correct_dict[k][1] / (admission_to_correct_dict[k][1] + admission_to_correct_dict[k][2]) 
-            assumption_rate = v[1] / (v[1] + v[2])
-            print(f'ASIA {k} | correct rate - assuming admission score rate  | {round(prediction_rate - assumption_rate, 4)}')
+        
+        prediction_rate = admission_to_correct_dict[k][1] / (admission_to_correct_dict[k][1] + admission_to_correct_dict[k][2]) 
+        assumption_rate = v[1] / (v[1] + v[2])
+        print(f'ASIA {k} | correct rate - assuming admission score rate  | {round(prediction_rate - assumption_rate, 4)}')
 
 
 def run_metrics(clf, train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict):

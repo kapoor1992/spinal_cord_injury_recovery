@@ -60,21 +60,7 @@ def get_practical_features(df):
     
     return result
 
-def filter_admission_asia(df, admission_asia):
-    asias_to_discard = ['A', 'B', 'C', 'D']
-    asias_to_discard.remove(admission_asia)
-    df = df[df[f'ASIA - Admission_{admission_asia}'] == 1]
-
-    for asia_to_discard in asias_to_discard:
-        df = df.drop(f'ASIA - Admission_{asia_to_discard}', axis=1)
-    
-    return df
-
-
-def get_train_test_split(df, target_col='ASIA - Discharge', injury_date_start=2006, admission_asia=None):
-    if admission_asia is not None:
-        df = filter_admission_asia(df, admission_asia)
-
+def get_train_test_split(df, target_col='ASIA - Discharge', injury_date_start=2006):
     df_train = df[df['Injury Date'] < injury_date_start]
     df_test = df[df['Injury Date'] >= injury_date_start]
 
@@ -91,7 +77,7 @@ def get_train_test_split(df, target_col='ASIA - Discharge', injury_date_start=20
     test_x = test_x.reindex(sorted(test_x.columns), axis=1)
     
     print(f'{df_train.shape[0] / df.shape[0]} : {df_test.shape[0] / df.shape[0]} split for testing starting at injury date {injury_date_start}.')
-    
+
     return train_x, train_y, test_x, test_y
 
 if __name__ == '__main__':

@@ -119,7 +119,7 @@ def main():
     # Same with these.
     np.random.seed(2)
     df = dataset_loader.get_dataset_df('../data/csvs/f1_public.csv', '../data/csvs/translated_dataset.csv')
-    train_x, train_y, test_x, test_y = dataset_loader.get_train_test_split(df, admission_asia='C')
+    train_x, train_y, test_x, test_y = dataset_loader.get_train_test_split(df)
 
     print('-----')
     print('ASIA matches between admission and discharge in training set:')
@@ -138,8 +138,8 @@ def main():
     print('-----')
 
     # Add model runs here.
-    clf = run_svm(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict)
-    #clf = run_knn(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict, neighbours=7)
+    #clf = run_svm(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict)
+    clf = run_knn(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict, neighbours=7)
     #clf = run_naive_bayes(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict)
     #clf = run_logistic_regression(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict)
     #clf = run_random_forest(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict, num_trees=1000)
