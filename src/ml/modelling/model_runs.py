@@ -130,21 +130,21 @@ def main():
     test_matches_dict = metrics.display_matches_dict(test_x, test_y)
     
     print('-----')
-    print(f'Total samples:          {train_y.shape[0] + test_y.shape[0]}') # 20,790
-    print(f'Total training samples: {train_y.shape[0]}') # 18,737
-    print(f'Total testing samples:  {test_y.shape[0]}') # 2,053
-    print(f'Total ML features:      {train_x.shape[1]}') # 53
+    print(f'Total samples:          {train_y.shape[0] + test_y.shape[0]}') # 2,995
+    print(f'Total training samples: {train_y.shape[0]}') # 2,609
+    print(f'Total testing samples:  {test_y.shape[0]}') # 386
+    print(f'Total ML features:      {train_x.shape[1]}') # 50
     print(f'Total "real" features:  {len(dataset_loader.get_practical_features(train_x))}') # 18
     print('-----')
 
     # Add model runs here.
-    clf = run_svm(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict)
+    #clf = run_svm(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict)
     #clf = run_knn(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict, neighbours=7)
     #clf = run_naive_bayes(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict)
     #clf = run_logistic_regression(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict)
     #clf = run_random_forest(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict, num_trees=1000)
-    #clf = run_elastic_net(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict, 
-    #                      penalty_type='elasticnet', iters=200, solver_name='saga', l1_ratio_frac=0.9)
+    clf = run_elastic_net(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict, 
+                          penalty_type='elasticnet', iters=200, solver_name='saga', l1_ratio_frac=0.9)
     #clf = run_ensemble(train_x, train_y, test_x, test_y, train_matches_dict, test_matches_dict)
 
     # Save model.
