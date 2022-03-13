@@ -11,6 +11,9 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import VotingClassifier
 from sklearn.svm import SVC
+from warnings import simplefilter
+from sklearn.exceptions import ConvergenceWarning
+
 
 def run_svm(train_x, train_y, test_x, test_y):
     clf = SVC(gamma='auto')
@@ -148,4 +151,5 @@ def main():
         run_importance(clf, train_x)
 
 if __name__ == '__main__':
+    simplefilter("ignore", category=ConvergenceWarning)
     main()
