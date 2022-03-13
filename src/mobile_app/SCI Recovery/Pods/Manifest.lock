@@ -1,0 +1,50 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - Alamofire (5.4.4)
+  - ExytePopupView (1.0.2)
+  - MaterialDesignSymbol (2.6.9)
+  - PagerTabStripView (3.0.0)
+  - SwiftyJSON (4.3.0)
+
+DEPENDENCIES:
+  - AFNetworking (~> 4.0)
+  - Alamofire (~> 5.4)
+  - ExytePopupView
+  - MaterialDesignSymbol
+  - PagerTabStripView (~> 3.0)
+  - SwiftyJSON (~> 4.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - Alamofire
+    - ExytePopupView
+    - MaterialDesignSymbol
+    - PagerTabStripView
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  ExytePopupView: b365220b2be506f23a4953e61b5b5dfe9c5b2da6
+  MaterialDesignSymbol: 01d9101368f06f3663923b7c872b13e1706b7aef
+  PagerTabStripView: 39ff1bb8cb1bee877c7a21740cede99b45fd3355
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+
+PODFILE CHECKSUM: 0da72daeba9f0ecdcdc1bfd6880b2c2e54fbddfa
+
+COCOAPODS: 1.11.2
