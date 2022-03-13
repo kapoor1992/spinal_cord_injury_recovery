@@ -75,7 +75,6 @@ def run_random_forest(train_x, train_y, test_x, test_y, num_trees):
 
     return clf
 
-# Best model yet.
 def run_elastic_net(train_x, train_y, test_x, test_y, penalty_type, iters, solver_name, l1_ratio_frac):
     clf = LogisticRegression(penalty=penalty_type, max_iter=iters, solver=solver_name, l1_ratio=l1_ratio_frac)
     clf.fit(train_x, train_y)
@@ -133,12 +132,12 @@ def main():
     print('-----')
 
     # Add model runs here.
-    #clf = run_svm(train_x, train_y, test_x, test_y)
+    clf = run_svm(train_x, train_y, test_x, test_y)
     #clf = run_knn(train_x, train_y, test_x, test_y, neighbours=7)
     #clf = run_naive_bayes(train_x, train_y, test_x, test_y)
     #clf = run_logistic_regression(train_x, train_y, test_x, test_y)
     #clf = run_random_forest(train_x, train_y, test_x, test_y, num_trees=1000)
-    clf = run_elastic_net(train_x, train_y, test_x, test_y, penalty_type='elasticnet', iters=200, solver_name='saga', l1_ratio_frac=0.9)
+    #clf = run_elastic_net(train_x, train_y, test_x, test_y, penalty_type='elasticnet', iters=200, solver_name='saga', l1_ratio_frac=0.9)
     #clf = run_ensemble(train_x, train_y, test_x, test_y)
 
     # Save model.
