@@ -6,7 +6,7 @@ import shap
 import numpy as np
 import ml.data.utils.f1_categorical_transformations as f1_categorical_transformations
 
-# Only tested for ElasticNet
+# Only tested for linear models
 def run_importance(clf, train_x, out_path='plots/importance.png'):
     # Need to cast values to avoid this: https://github.com/slundberg/shap/issues/432
     masker = shap.maskers.Independent(data=train_x.values.astype(np.float64))
