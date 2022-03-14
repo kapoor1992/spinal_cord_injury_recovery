@@ -6,7 +6,7 @@ import argparse
 import pickle
 from data import dataset_loader, metrics
 from sklearn.naive_bayes import GaussianNB
-from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import LogisticRegression, RidgeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import VotingClassifier
@@ -59,6 +59,18 @@ def run_logistic_regression(train_x, train_y, test_x, test_y):
     
     print('-----')
     print("Logistic Regression")
+    metrics.run_metrics(clf,train_x,train_y,test_x,test_y)
+    
+    return clf
+
+def run_ridge_classifier(train_x, train_y, test_x, test_y):
+    clf = RidgeClassifier()
+    clf.fit(train_x, train_y)
+    
+    clf.inference_features = list(test_x.columns.values)  
+    
+    print('-----')
+    print("Ridge Classifier")
     metrics.run_metrics(clf,train_x,train_y,test_x,test_y)
     
     return clf
@@ -132,10 +144,11 @@ def main():
     print('-----')
 
     # Add model runs here.
-    clf = run_svm(train_x, train_y, test_x, test_y)
+    #clf = run_svm(train_x, train_y, test_x, test_y)
     #clf = run_knn(train_x, train_y, test_x, test_y, neighbours=7)
     #clf = run_naive_bayes(train_x, train_y, test_x, test_y)
     #clf = run_logistic_regression(train_x, train_y, test_x, test_y)
+    clf = run_ridge_classifier(train_x, train_y, test_x, test_y)
     #clf = run_random_forest(train_x, train_y, test_x, test_y, num_trees=1000)
     #clf = run_elastic_net(train_x, train_y, test_x, test_y, penalty_type='elasticnet', iters=200, solver_name='saga', l1_ratio_frac=0.9)
     #clf = run_ensemble(train_x, train_y, test_x, test_y)
