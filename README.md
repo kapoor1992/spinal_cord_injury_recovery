@@ -39,5 +39,5 @@ It contains the code for predicting ASIA classification after a spinal cord inju
 1. Copy `f1_public.csv` from NSCISC into `src/ml/data/csvs/`
 2. Activate conda environment: `conda activate sci`
 3. Navigate to the modelling directory: `cd src/ml/modelling`
-4. Run model training (intepret flag is optional): `python model_runs.py --interpret`
+4. Run model training (flags are optional): `python model_runs.py --interpret --drop-patients-who-worsened`
 5. If `--interpret` was used, verify that `importance.png` can be seen in `src/ml/modelling/plots/`
