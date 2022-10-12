@@ -60,9 +60,22 @@ def get_practical_features(df):
     
     return result
 
-def get_train_test_split(df, target_col='ASIA - Discharge', injury_date_start=2006):
-    df_train = df[df['Injury Date'] < injury_date_start]
-    df_test = df[df['Injury Date'] >= injury_date_start]
+def get_train_test_split(df, target_col='ASIA - Discharge', injury_date_start=2006, drop_patients_who_worsened=False):
+    df_local = df.copy()
+
+    if drop_patients_who_worsened:
+        orig_row_count = df_local.shape[0]
+        
+        df_local = df_local[
+            (df_local['ASIA - Admission_A'] == 1) | 
+            ((df_local['ASIA - Admission_B'] == 1) & (df_local[target_col] > 1)) |
+            ((df_local['ASIA - Admission_C'] == 1) & (df_local[target_col] > 2)) |
+            ((df_local['ASIA - Admission_D'] == 1) & (df_local[target_col] > 3)) |
+            (df_local[target_col] == 5)]
+        print(f'Patients who worsened = {orig_row_count - df_local.shape[0]} ({round(100 * (orig_row_count - df_local.shape[0]) / orig_row_count, 2)}%)')
+
+    df_train = df_local[df_local['Injury Date'] < injury_date_start]
+    df_test = df_local[df_local['Injury Date'] >= injury_date_start]
 
     df_train = df_train.drop(['Injury Date'], axis=1)
     df_test = df_test.drop(['Injury Date'], axis=1)
@@ -76,7 +89,7 @@ def get_train_test_split(df, target_col='ASIA - Discharge', injury_date_start=20
     train_x = train_x.reindex(sorted(train_x.columns), axis=1)
     test_x = test_x.reindex(sorted(test_x.columns), axis=1)
     
-    print(f'{df_train.shape[0] / df.shape[0]} : {df_test.shape[0] / df.shape[0]} split for testing starting at injury date {injury_date_start}.')
+    print(f'{df_train.shape[0] / df_local.shape[0]} : {df_test.shape[0] / df_local.shape[0]} split for testing starting at injury date {injury_date_start}.')
 
     return train_x, train_y, test_x, test_y
 
