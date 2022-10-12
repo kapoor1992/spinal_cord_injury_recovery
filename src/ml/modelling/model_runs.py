@@ -128,12 +128,13 @@ def main():
     # Only do these lines once.
     parser = argparse.ArgumentParser()
     parser.add_argument('--interpret', action='store_true')
+    parser.add_argument('--drop-patients-who-worsened', action='store_true')
     args = parser.parse_args()
 
     # Same with these.
     np.random.seed(2)
     df = dataset_loader.get_dataset_df('../data/csvs/f1_public.csv', '../data/csvs/translated_dataset.csv')
-    train_x, train_y, test_x, test_y = dataset_loader.get_train_test_split(df)
+    train_x, train_y, test_x, test_y = dataset_loader.get_train_test_split(df, drop_patients_who_worsened=args.drop_patients_who_worsened)
     
     print('-----')
     print(f'Total samples:          {train_y.shape[0] + test_y.shape[0]}') # 20,790
