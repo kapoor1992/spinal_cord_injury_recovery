@@ -4,6 +4,10 @@
 
 It contains the code for predicting ASIA classification after a spinal cord injury.
 
+## Where is it used?
+
+The work herein has been published and the entirety of the research discussion can be found at: https://www.eneuro.org/content/10/1/ENEURO.0149-22.2022.
+
 ## How is the codebase structured?
 
 |     Path                                           |     What does it   contain?                                           |
